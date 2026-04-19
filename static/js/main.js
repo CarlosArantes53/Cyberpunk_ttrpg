@@ -44,7 +44,10 @@ async function speak(text, btn) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ texto: text, voz: voice })
     });
-    if (!r.ok) throw new Error('TTS falhou: ' + r.status);
+    if (!r.ok) {
+      const errData = await r.json();
+      throw new Error(`TTS falhou: ${errData.erro || r.status}`);
+    }
     const blob = await r.blob();
     const url = URL.createObjectURL(blob);
     _ttsAudio = new Audio(url);

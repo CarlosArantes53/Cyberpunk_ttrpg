@@ -3,13 +3,15 @@ TTS via Kokoro-ONNX (PT-BR).
 
 Downloads model and voice files on first use.
 Exposes a single function: synthesize(text, voice) -> bytes (WAV).
+Long texts are split into sentences and concatenated automatically.
 """
 import io
 import os
+import re
 import numpy as np
 import onnxruntime as rt
 import soundfile as sf
-from kokoro_onnx import Tokenizer, SAMPLE_RATE
+from kokoro_onnx import Tokenizer, SAMPLE_RATE, MAX_PHONEME_LENGTH
 from huggingface_hub import hf_hub_download
 
 REPO = "onnx-community/Kokoro-82M-v1.0-ONNX"
@@ -59,28 +61,84 @@ def _load_voice(name: str) -> np.ndarray:
     return _voice_cache[name]
 
 
+def _split_sentences(text: str) -> list[str]:
+    """Split text into sentences on punctuation, keeping delimiter attached."""
+    parts = re.split(r'(?<=[.!?;:\n])\s*', text.strip())
+    return [p.strip() for p in parts if p.strip()]
+
+
+def _synth_chunk(sess, tok, voice_arr, chunk: str, speed: float) -> np.ndarray | None:
+    """Synthesize a single chunk. Returns None if chunk produces no tokens."""
+    phonemes = tok.phonemize(chunk, lang="pt-br")
+    tokens_raw = tok.tokenize(phonemes)
+    if not tokens_raw:
+        return None
+    # Limit to MAX_PHONEME_LENGTH - 2 (pad tokens)
+    tokens_raw = tokens_raw[: MAX_PHONEME_LENGTH - 2]
+    style_idx = min(len(tokens_raw), len(voice_arr) - 1)
+    style = voice_arr[style_idx][np.newaxis, :]        # (1, 256)
+    tokens = np.array([[0, *tokens_raw, 0]], dtype=np.int64)
+    speed_arr = np.array([speed], dtype=np.float32)
+    return sess.run(None, {"input_ids": tokens, "style": style, "speed": speed_arr})[0][0]
+
+
 def synthesize(text: str, voice: str = "pf_dora", speed: float = 1.0) -> bytes:
-    """Returns WAV audio as bytes."""
+    """Returns WAV audio as bytes. Long texts are split into sentences."""
     sess = _get_session()
     tok = _get_tokenizer()
     voice_arr = _load_voice(voice)
 
-    # Phonemize and tokenize
-    phonemes = tok.phonemize(text, lang="pt-br")
-    tokens_raw = tok.tokenize(phonemes)
-    if not tokens_raw:
-        # Silence fallback for empty phonemes
-        silence = np.zeros(int(SAMPLE_RATE * 0.5), dtype=np.float32)
-        return _to_wav_bytes(silence)
+    sentences = _split_sentences(text)
+    if not sentences:
+        return _to_wav_bytes(np.zeros(int(SAMPLE_RATE * 0.3), dtype=np.float32))
 
-    # Clamp index so we never go out of bounds
-    style_idx = min(len(tokens_raw), len(voice_arr) - 1)
-    style = voice_arr[style_idx][np.newaxis, :]  # (1, 256)
-    tokens = np.array([[0, *tokens_raw, 0]], dtype=np.int64)  # (1, seq+2)
-    speed_arr = np.array([speed], dtype=np.float32)
+    # Group sentences into chunks whose phoneme string fits within MAX_PHONEME_LENGTH
+    # tokenize() checks len(phoneme_string), so we compare string length
+    LIMIT = MAX_PHONEME_LENGTH - 2
+    chunks: list[str] = []
+    current = ""
+    for sent in sentences:
+        candidate = (current + " " + sent).strip() if current else sent
+        ph = tok.phonemize(candidate, lang="pt-br")
+        if len(ph) > LIMIT:
+            if current:
+                chunks.append(current)
+            # If even the single sentence is too long, split by words
+            if len(tok.phonemize(sent, lang="pt-br")) > LIMIT:
+                words = sent.split()
+                sub = ""
+                for w in words:
+                    cand2 = (sub + " " + w).strip() if sub else w
+                    if len(tok.phonemize(cand2, lang="pt-br")) > LIMIT:
+                        if sub:
+                            chunks.append(sub)
+                        sub = w
+                    else:
+                        sub = cand2
+                if sub:
+                    chunks.append(sub)
+                current = ""
+            else:
+                current = sent
+        else:
+            current = candidate
+    if current:
+        chunks.append(current)
 
-    audio = sess.run(None, {"input_ids": tokens, "style": style, "speed": speed_arr})[0][0]
-    return _to_wav_bytes(audio)
+    # Synthesize each chunk and concatenate with a short silence between
+    silence_gap = np.zeros(int(SAMPLE_RATE * 0.15), dtype=np.float32)
+    parts: list[np.ndarray] = []
+    for chunk in chunks:
+        audio = _synth_chunk(sess, tok, voice_arr, chunk, speed)
+        if audio is not None:
+            if parts:
+                parts.append(silence_gap)
+            parts.append(audio)
+
+    if not parts:
+        return _to_wav_bytes(np.zeros(int(SAMPLE_RATE * 0.3), dtype=np.float32))
+
+    return _to_wav_bytes(np.concatenate(parts))
 
 
 def _to_wav_bytes(audio: np.ndarray) -> bytes:

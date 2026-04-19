@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regras de Perícias e Habilidades - Cyberpunk RED</title>
+  <style>
+    :root {
+      --bg: #0a0e14;
+      --bg2: #10161f;
+      --fg: #e6f1ff;
+      --dim: #6a7891;
+      --accent: #00ffe1;
+      --accent2: #ff2e88;
+      --accent3: #ffd400;
+      --danger: #ff4d4d;
+      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: 
+        radial-gradient(circle at 80% 0%, rgba(255,212,0,.05), transparent 40%),
+        radial-gradient(circle at 20% 100%, rgba(0,255,225,.05), transparent 40%),
+        var(--bg);
+      color: var(--fg);
+      font-family: var(--mono);
+      margin: 0;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg2);
+      border: 1px solid rgba(0,255,225,.2);
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(0, 255, 225, 0.05);
+    }
+
+    header {
+      border-bottom: 2px solid var(--accent3);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--accent3);
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255,212,0,.4);
+    }
+
+    .tag {
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 2px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 40px 0 20px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+    }
+
+    h3 {
+      color: var(--accent2);
+      font-size: 16px;
+      margin-top: 25px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #c0d0e0;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+      color: #c0d0e0;
+    }
+
+    li { margin-bottom: 10px; }
+
+    .highlight { color: var(--accent3); font-weight: bold; }
+    .danger { color: var(--danger); font-weight: bold; }
+    .cyber-stat { color: var(--accent); font-weight: bold; }
+    .cyber-skill { color: var(--accent2); font-style: italic; }
+
+    .note-box {
+      background: rgba(0, 255, 225, 0.05);
+      border: 1px solid rgba(0, 255, 225, 0.3);
+      border-left: 4px solid var(--accent);
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 2px;
+    }
+
+    .note-box h4 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid rgba(0,255,225,.2);
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(0,255,225,.1);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+    
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--dim);
+      border-top: 1px solid rgba(0,255,225,.1);
+      padding-top: 20px;
+    }
+    
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>DataTerm: Perícias & Habilidades</h1>
+      <span class="tag">// RESOLUÇÃO DE TESTES E USO DE PERÍCIAS - CYBERPUNK RED //</span>
+    </header>
+
+    <h2>1. A Mecânica Base (A Regra de Ouro)</h2>
+    <p>Em Cyberpunk RED, sempre que você tentar realizar uma ação cujo resultado seja incerto, você faz um <strong>Teste de Perícia</strong>. A fórmula básica para qualquer teste é sempre a mesma:</p>
+    
+    <div style="text-align: center; font-size: 20px; margin: 30px 0; padding: 20px; border: 1px dashed var(--accent3); color: var(--fg);">
+      <span class="cyber-stat">1d10</span> + <span class="cyber-stat">Atributo</span> + <span class="cyber-skill">Nível da Perícia</span> + <span class="highlight">Modificadores</span>
+    </div>
+
+    <p>Para ser bem-sucedido, o seu resultado total deve ser <strong>ESTRITAMENTE MAIOR</strong> que o Valor de Dificuldade (DV) ou a rolagem do oponente. <em>Empates sempre vão para o Defensor (ou resultam em falha contra um DV fixo).</em></p>
+
+    <h2>2. A Regra do 10 e a Regra do 1 (Críticos)</h2>
+    <p>O dado de 10 faces (d10) em Cyberpunk pode "explodir" tanto para o bem quanto para o mal:</p>
+    <ul>
+      <li><span class="highlight">O 10 Explosivo (Acerto Crítico):</span> Se você rolar um 10 natural no seu primeiro d10, você <strong>rola mais 1d10 e soma</strong> ao resultado. Se rolar outro 10 no dado extra, você não rola novamente (limite de uma explosão).</li>
+      <li><span class="danger">A Falha Crítica (Erro Crítico):</span> Se você rolar um 1 natural no seu primeiro d10, você <strong>rola mais 1d10 e SUBTRAI</strong> do seu total (Atributo + Perícia). Isso pode resultar em totais negativos!</li>
+    </ul>
+
+    <h2>3. Quando usar: Tipos de Testes</h2>
+    
+    <div class="grid-2">
+      <div>
+        <h3>Testes contra DV (Dificuldade)</h3>
+        <p>Usado quando você está testando contra o ambiente, consertando algo, hackeando ou tentando se lembrar de uma informação. O Mestre define a dificuldade com base na tabela abaixo.</p>
+        <table>
+          <tr><th>Dificuldade</th><th>Valor (DV)</th></tr>
+          <tr><td>Simples</td><td>9</td></tr>
+          <tr><td>Cotidiano</td><td>13</td></tr>
+          <tr><td>Difícil</td><td>15</td></tr>
+          <tr><td>Profissional</td><td>17</td></tr>
+          <tr><td>Heroico</td><td>21</td></tr>
+          <tr><td>Lendário</td><td>29</td></tr>
+        </table>
+      </div>
+      
+      <div>
+        <h3>Testes Resistidos (Opostos)</h3>
+        <p>Usado quando dois personagens estão ativamente competindo um contra o outro. Por exemplo: <span class="cyber-skill">Furtividade</span> contra <span class="cyber-skill">Percepção</span>, ou <span class="cyber-skill">Evasão</span> contra um ataque de <span class="cyber-skill">Briga</span>.</p>
+        <p><strong>Fórmula:</strong> Atacante (1d10 + Atributo + Perícia) VS Defensor (1d10 + Atributo + Perícia).</p>
+        <p>O atacante precisa superar o resultado do defensor. Em caso de empate, quem iniciou a ação falha.</p>
+      </div>
+    </div>
+
+    <h2>4. Categorias de Perícias</h2>
+    <p>As perícias são divididas em categorias. Aqui estão os usos mais comuns para você saber quando rolá-las:</p>
+    
+    <ul>
+      <li><span class="highlight">Perícias de Atenção (INT/FVO):</span> 
+        <br>• <span class="cyber-skill">Percepção:</span> Encontrar pistas, ouvir passos, notar emboscadas.
+        <br>• <span class="cyber-skill">Concentração:</span> Manter o foco sob fogo cruzado, resistir a intimidação ou tortura mental.
+        <br>• <span class="cyber-skill">Ocultar/Revelar Objeto:</span> Esconder uma arma no casaco ou achar um chip contrabandeado num pneu.
+      </li>
+      
+      <li><span class="highlight">Perícias Corporais (DES/FVO):</span>
+        <br>• <span class="cyber-skill">Atletismo:</span> Pular entre telhados, nadar, escalar, arremessar granadas.
+        <br>• <span class="cyber-skill">Furtividade:</span> Mover-se em silêncio ou se esconder nas sombras.
+        <br>• <span class="cyber-skill">Resistência:</span> Ficar acordado por dias, aguentar venenos ou marchas forçadas.
+      </li>
+      
+      <li><span class="highlight">Perícias Sociais (EMP/COOL):</span>
+        <br>• <span class="cyber-skill">Persuasão:</span> Convencer alguém logicamente a fazer o que você quer.
+        <br>• <span class="cyber-skill">Malandragem / Lábia:</span> Mentir, enrolar ou enganar.
+        <br>• <span class="cyber-skill">Percepção Humana:</span> Ler a linguagem corporal para saber se alguém está mentindo ou nervoso.
+        <br>• <span class="cyber-skill">Interrogatório:</span> Extrair informações à força ou sob pressão.
+      </li>
+      
+      <li><span class="highlight">Perícias Técnicas (TEC):</span>
+        <br>• <span class="cyber-skill">Eletrônica / Seg. Básica:</span> Desarmar alarmes, hackear painéis simples, abrir portas magnéticas.
+        <br>• <span class="cyber-skill">Primeiros Socorros / Paramédico:</span> Estabilizar aliados moribundos ou realizar curativos rápidos.
+        <br>• <span class="cyber-skill">Cibertecnologia:</span> Identificar falhas em implantes cibernéticos ou repará-los.
+      </li>
+    </ul>
+
+    <div class="note-box">
+      <h4>Habilidades de Papel (Role Abilities)</h4>
+      <p>Lembre-se que além das perícias normais, cada Papel (Classe) possui uma <strong>Habilidade de Papel Única</strong> que não pode ser aprendida pelos outros. Por exemplo:</p>
+      <ul>
+        <li><strong>Netrunner (Interface):</strong> A única habilidade que permite se conectar à arquitetura de Rede, usar programas ICE e hackear nós de controle.</li>
+        <li><strong>Fixer (Operador):</strong> Usada para conseguir itens raros no mercado negro, fechar negócios impossíveis e gerenciar contatos.</li>
+        <li><strong>Medtech (Medicina):</strong> Permite fazer cirurgias complexas, instalar cibernética e administrar fármacos e estimulantes que curam além dos Primeiros Socorros normais.</li>
+      </ul>
+      <p>Essas habilidades geralmente têm regras próprias descritas na sua ficha e evoluem subindo de rank (1 a 10).</p>
+    </div>
+
+    <h2>5. Modificadores e Condições Complementares</h2>
+    <p>O Mestre pode (e deve) aplicar modificadores na sua rolagem com base na situação. Se você tiver as ferramentas certas e bastante tempo, ganha bônus. Se estiver sob ataque, no escuro ou sem equipamento adequado, recebe penalidades.</p>
+    <ul>
+      <li><strong>Ação Demorada:</strong> Tomar tempo extra para fazer algo com calma (+1 ou +2 no teste).</li>
+      <li><strong>Trabalho em Equipe:</strong> Ter ajuda de um aliado qualificado adiciona bônus de Sinergia.</li>
+      <li><strong>Sem Ferramentas:</strong> Tentar consertar um carro sem um kit de mecânico pode impor -2 ou -4.</li>
+    </ul>
+
+    <div class="footer">
+      // GERADO PARA O SISTEMA NIGHT_CITY.RPG ASSISTANT // THE STREETS ALWAYS WIN //
+    </div>
+  </div>
+
+</body>
+</html>
