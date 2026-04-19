@@ -8,6 +8,7 @@
     :root {
       --bg: #0a0e14;
       --bg2: #10161f;
+      --bg3: #0d1219;
       --fg: #e6f1ff;
       --dim: #6a7891;
       --accent: #00ffe1;
@@ -16,11 +17,9 @@
       --danger: #ff4d4d;
       --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
     }
-
     * { box-sizing: border-box; }
-
     body {
-      background: 
+      background:
         radial-gradient(circle at 20% 0%, rgba(255,46,136,.05), transparent 40%),
         radial-gradient(circle at 80% 100%, rgba(0,255,225,.05), transparent 40%),
         var(--bg);
@@ -30,242 +29,396 @@
       padding: 40px 20px;
       line-height: 1.6;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--bg2);
-      border: 1px solid rgba(0,255,225,.2);
-      padding: 40px;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 255, 225, 0.05);
-    }
-
-    header {
-      border-bottom: 2px solid var(--accent2);
-      padding-bottom: 20px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    h1 {
-      color: var(--accent2);
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px rgba(255,46,136,.4);
-    }
-
-    .tag {
-      color: var(--accent);
-      font-size: 14px;
-      letter-spacing: 2px;
-      display: block;
-      margin-top: 10px;
-    }
-
-    h2 {
-      color: var(--accent);
-      font-size: 20px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin: 40px 0 20px;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
-    }
-
-    h3 {
-      color: var(--accent3);
-      font-size: 16px;
-      margin-top: 25px;
-      text-transform: uppercase;
-    }
-
-    p {
-      margin-bottom: 15px;
-      color: #c0d0e0;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-      color: #c0d0e0;
-    }
-
-    li { margin-bottom: 10px; }
-
+    .container { max-width: 960px; margin: 0 auto; background: var(--bg2); border: 1px solid rgba(0,255,225,.2); padding: 40px; border-radius: 4px; box-shadow: 0 0 20px rgba(0,255,225,.05); }
+    header { border-bottom: 2px solid var(--accent2); padding-bottom: 20px; margin-bottom: 40px; text-align: center; }
+    h1 { color: var(--accent2); margin: 0; font-size: 28px; letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 0 10px rgba(255,46,136,.4); }
+    .tag { color: var(--accent); font-size: 13px; letter-spacing: 2px; display: block; margin-top: 10px; }
+    h2 { color: var(--accent); font-size: 18px; letter-spacing: 2px; text-transform: uppercase; margin: 44px 0 18px; border-left: 4px solid var(--accent); padding-left: 12px; }
+    h3 { color: var(--accent3); font-size: 14px; margin-top: 24px; text-transform: uppercase; letter-spacing: 1px; }
+    h4 { color: var(--accent2); font-size: 13px; margin: 12px 0 6px; text-transform: uppercase; }
+    p { margin-bottom: 14px; color: #c0d0e0; font-size: 14px; }
+    ul { list-style-type: square; padding-left: 20px; color: #c0d0e0; font-size: 14px; }
+    li { margin-bottom: 8px; }
     .highlight { color: var(--accent3); font-weight: bold; }
     .danger { color: var(--danger); font-weight: bold; }
-    .cyber-stat { color: var(--accent); }
-
-    .note-box {
-      background: rgba(255, 46, 136, 0.05);
-      border: 1px solid rgba(255, 46, 136, 0.3);
-      border-left: 4px solid var(--accent2);
-      padding: 15px 20px;
-      margin: 25px 0;
-      border-radius: 2px;
-    }
-
-    .note-box h4 {
-      margin: 0 0 10px 0;
-      color: var(--accent2);
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-      font-size: 14px;
-    }
-
-    th, td {
-      border: 1px solid rgba(0,255,225,.2);
-      padding: 12px 15px;
-      text-align: left;
-    }
-
-    th {
-      background: rgba(0,255,225,.1);
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    tr:nth-child(even) { background: rgba(0,0,0,0.2); }
-    
-    .footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--dim);
-      border-top: 1px solid rgba(0,255,225,.1);
-      padding-top: 20px;
-    }
+    .cyber-stat { color: var(--accent); font-weight: bold; }
+    .note-box { background: rgba(255,46,136,.05); border: 1px solid rgba(255,46,136,.3); border-left: 4px solid var(--accent2); padding: 14px 18px; margin: 22px 0; border-radius: 2px; }
+    .note-box h4 { margin: 0 0 10px 0; color: var(--accent2); font-size: 13px; text-transform: uppercase; }
+    .info-box { background: rgba(0,255,225,.04); border: 1px solid rgba(0,255,225,.25); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 22px 0; border-radius: 2px; }
+    .info-box h4 { margin: 0 0 10px 0; color: var(--accent); font-size: 13px; }
+    .warn-box { background: rgba(255,212,0,.04); border: 1px solid rgba(255,212,0,.25); border-left: 4px solid var(--accent3); padding: 14px 18px; margin: 22px 0; border-radius: 2px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+    th, td { border: 1px solid rgba(0,255,225,.2); padding: 10px 13px; text-align: left; }
+    th { background: rgba(0,255,225,.1); color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+    tr:nth-child(even) { background: rgba(0,0,0,.2); }
+    .formula { text-align: center; font-size: 16px; margin: 24px 0; padding: 18px; border: 1px dashed var(--accent3); color: var(--fg); background: rgba(0,0,0,.2); border-radius: 2px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .footer { margin-top: 50px; text-align: center; font-size: 12px; color: var(--dim); border-top: 1px solid rgba(0,255,225,.1); padding-top: 20px; }
+    .badge { display: inline-block; background: rgba(0,255,225,.12); color: var(--accent); border: 1px solid rgba(0,255,225,.3); font-size: 11px; padding: 2px 7px; border-radius: 2px; margin-left: 6px; vertical-align: middle; }
+    .badge-red { background: rgba(255,46,136,.12); color: var(--accent2); border-color: rgba(255,46,136,.3); }
+    .badge-yellow { background: rgba(255,212,0,.12); color: var(--accent3); border-color: rgba(255,212,0,.3); }
+    .small { font-size: 12px; color: var(--dim); }
   </style>
 </head>
 <body>
+<div class="container">
+  <header>
+    <h1>Manual de Sobrevivência</h1>
+    <span class="tag">// REGRAS DE COMBATE COMPLETAS — CYBERPUNK RED //</span>
+  </header>
 
-  <div class="container">
-    <header>
-      <h1>Manual de Sobrevivência</h1>
-      <span class="tag">// REGRAS DE COMBATE - CYBERPUNK RED //</span>
-    </header>
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>1. Iniciativa e Estrutura do Combate</h2>
+  <p>O combate é dividido em <strong>Turnos</strong> (~3 segundos cada). A sequência total de todos os participantes é chamada de <strong>Rodada</strong>, que também dura ~3 segundos.</p>
+  <div class="formula"><span class="cyber-stat">Iniciativa = REF + 1d10</span></div>
+  <ul>
+    <li>Todos rolam simultaneamente no início. Ordene em fila decrescente. Em empate, role novamente até desempatar.</li>
+    <li>A fila se mantém até o fim do combate. Quando o último age, a rodada recomeça do topo.</li>
+    <li><strong>Kerenzikov</strong> adiciona <span class="highlight">+2</span> permanentemente à rolagem. <strong>Sandevistan</strong> adiciona <span class="highlight">+3</span> quando ativado.</li>
+    <li>Ligar um veículo coloca o motorista imediatamente no <strong>topo da fila</strong>.</li>
+  </ul>
 
-    <h2>1. A Rodada de Combate e Iniciativa</h2>
-    <p>O combate em Cyberpunk é rápido e letal. Quando os tiros começam a voar, o tempo é dividido em <strong>Rodadas</strong> (que representam cerca de 3 segundos no jogo). Cada personagem age no seu próprio Turno dentro dessa rodada.</p>
-    <ul>
-      <li><strong>Rolagem de Iniciativa:</strong> No início do combate, todos rolam <span class="cyber-stat">1d10 + REF (Reflexos)</span>.</li>
-      <li><strong>Modificadores:</strong> Cibernéticos e drogas alteram este valor. O <em>Kerenzikov</em> adiciona +2 permanentemente à rolagem e o <em>Sandevistan</em> adiciona +3 ao ser ativado. Armaduras pesadas podem aplicar penalidades.</li>
-      <li>A ordem de ação é decrescente e mantida até o fim do combate.</li>
-    </ul>
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>2. Economia de Ações no Turno</h2>
+  <p><strong>Cada turno você recebe:</strong> <span class="cyber-stat">1 Ação de Movimento + 1 Ação</span></p>
 
-    <h2>2. Economia de Ações no Turno</h2>
-    <p>No seu turno, cada personagem tem direito a realizar <strong>uma (1) Ação de Movimento</strong> e <strong>uma (1) Ação Principal</strong>.</p>
-    
-    <h3>Ação de Movimento e Fracionamento</h3>
-    <p>Você pode se mover até o dobro do seu <span class="cyber-stat">MOV</span> em metros (ex: MOV 5 = 10m) ou equivalente a quadrados. Movimentos como escalar ou pular custam o dobro do deslocamento. Você pode <strong>fracionar</strong> o seu movimento: andar um pouco, atacar, e usar o resto do movimento para voltar a uma cobertura.</p>
+  <table>
+    <tr><th>Ação</th><th>Descrição</th></tr>
+    <tr><td class="highlight">Ação de Movimento</td><td>Mova até <strong>MOVE × 2 metros</strong> (ou MOVE quadrados em grid). Pode ser dividida em torno da Ação principal.</td></tr>
+    <tr><td class="highlight">Ataque</td><td>Faça um ataque à distância ou corpo a corpo (detalhes abaixo).</td></tr>
+    <tr><td class="highlight">Correr</td><td>Gaste sua Ação para ganhar <em>uma Ação de Movimento adicional</em> (só se já tiver se movido neste turno).</td></tr>
+    <tr><td class="highlight">Agarrar</td><td>Agarre um oponente, tome um objeto ou escape de um agarramento.</td></tr>
+    <tr><td class="highlight">Estrangular</td><td>Aplique dano direto em HP em alguém que você está agarrando (ver Briga).</td></tr>
+    <tr><td class="highlight">Escudo Humano</td><td>"Equipe" o alvo agarrado como escudo (requer mão livre).</td></tr>
+    <tr><td class="highlight">Ação Mantida</td><td>Declare um gatilho e aguarde agir fora do seu turno. Ações de Movimento e NET não podem ser mantidas.</td></tr>
+    <tr><td class="highlight">Recarregar</td><td>Substitua o carregador completo por um único tipo de munição.</td></tr>
+    <tr><td class="highlight">Estabilizar</td><td>Tente um teste de Primeiros Socorros/Paramédico para retirar um aliado do estado Mortalmente Ferido.</td></tr>
+    <tr><td class="highlight">Levantar</td><td>Levante-se do estado Pronado (não pode usar Ação de Movimento enquanto caído).</td></tr>
+    <tr><td class="highlight">Equipar/Soltar Escudo</td><td>Custa uma Ação (sacar arma de mão livre <em>não</em> custa ação).</td></tr>
+    <tr><td class="highlight">Ligar Veículo</td><td>Liga o veículo e o motorista vai para o topo da fila de iniciativa.</td></tr>
+    <tr><td class="highlight">Usar Ações NET</td><td>Executa Ações NET (apenas Netrunners). Veja seção Netrunning.</td></tr>
+    <tr><td class="highlight">Usar Objeto / Habilidade</td><td>Manipule itens ou use uma perícia rapidamente (3 seg). Tarefas longas exigem múltiplas ações.</td></tr>
+    <tr><td class="highlight">Lançar</td><td>Jogue um oponente agarrado no chão ou lance um objeto.</td></tr>
+  </table>
 
-    <h3>Ação Principal</h3>
-    <p>Opções para gastar sua Ação Principal incluem (mas não se limitam a):</p>
-    <ul>
-      <li><strong>Atacar:</strong> Fazer um ataque à distância ou corpo-a-corpo. Caso a arma tenha CDT (Cadência de Tiro) igual a 2 (ex: Pistolas), você pode atacar duas vezes dividindo as ações pelo movimento!</li>
-      <li><strong>Adiar / Preparar Ação:</strong> Escolha um "gatilho" narrativo para agir fora do seu turno (ex: <em>"Vou esperar ele sair da cobertura e atiro"</em>). Garante que você acerte alvos que fogem do campo de visão.</li>
-      <li><strong>Estabilizar:</strong> Fazer um teste de Primeiros Socorros para tirar um aliado do estado Mortalmente Ferido (Death Saves).</li>
-      <li><strong>Correr:</strong> Abdicar da ação principal para ganhar uma Ação de Movimento extra.</li>
-      <li><strong>Agarrar/Sufocar:</strong> Um teste resistido de Briga. Se bem sucedido, os dois recebem -2 em ações, e com mais uma ação, você pode usar o alvo agarrado como <strong>Escudo Humano</strong>.</li>
-      <li><strong>Ações Técnicas:</strong> Recarregar armas, Usar Objeto, Hackear Redes, Equipar Escudo.</li>
-    </ul>
+  <h3>Dividindo Movimento e CDT 2</h3>
+  <p>Armas com <strong>Cadência de Tiro (CDT) 2</strong> permitem dividir ataques em torno do movimento: <em>mova → atire → mova → atire</em>. Você nunca pode fazer mais de <span class="danger">2 ataques por Ação</span>, e não pode usar duas armas CDT 1 na mesma Ação. Ataques CDT 1 consomem toda a Ação, mas o movimento ainda pode ser dividido.</p>
 
-    <h2>3. Resolução de Ataques e Modos de Disparo</h2>
+  <div class="info-box">
+    <h4>Outras formas de movimento</h4>
+    <p>Natação, escalada e salto com impulso custam <strong>2m por cada 1m percorrido</strong>. Salto parado cobre <em>metade</em> da distância de um salto com impulso.</p>
+  </div>
 
-    <h3>Ataques à Distância Básicos</h3>
-    <p>Role: <span class="cyber-stat">1d10 + Base da Perícia (Atributo + Nível de Perícia)</span>.</p>
-    <ul>
-      <li><strong>Contra DV de Distância:</strong> O atacante deve superar o Valor de Dificuldade (VD) fixo baseado na distância (em metros) e no tipo de arma do livro.</li>
-      <li><strong>Esquivando de Balas:</strong> Se o alvo possuir Reflexos (<span class="cyber-stat">REF</span>) 8 ou maior, ele desvia ativamente. O DV se torna o resultado do defensor rodando: <span class="cyber-stat">1d10 + DES + Evasão</span>.</li>
-    </ul>
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>3. Combate à Distância</h2>
+  <div class="formula"><span class="cyber-stat">REF + Habilidade da Arma + 1d10</span> vs. <span class="cyber-stat">DV de Distância</span> ou <span class="cyber-stat">DEX + Evasão + 1d10*</span><br><span class="small">*Defensor com REF 8+ pode esquivar ativamente em vez de usar a tabela.</span></div>
 
-    <h3>Disparo Concentrado (Aimed Shot)</h3>
-    <p>Declare <strong>antes</strong> de rolar. Aplica-se um <strong>redutor de -8 no seu teste</strong> (o VD aumenta em 8), mas com efeitos devastadores:</p>
-    <ul>
-      <li><strong>Na Cabeça:</strong> Todo o dano que passar pela armadura é multiplicado por 2.</li>
-      <li><strong>Na Perna:</strong> Causa diretamente a Lesão Crítica de Perna Quebrada.</li>
-      <li><strong>Em Objeto/Arma:</strong> O alvo derruba o que estiver segurando.</li>
-    </ul>
+  <h3>Tabela de DVs por Distância</h3>
+  <table>
+    <tr><th>Arma</th><th>0–6m</th><th>7–12m</th><th>13–25m</th><th>26–50m</th><th>51–100m</th><th>101–200m</th><th>201–400m</th><th>401–800m</th></tr>
+    <tr><td>Pistola</td><td>13</td><td>15</td><td>20</td><td>25</td><td>30</td><td>30</td><td>N/A</td><td>N/A</td></tr>
+    <tr><td>SMG</td><td>15</td><td>13</td><td>15</td><td>20</td><td>25</td><td>25</td><td>30</td><td>N/A</td></tr>
+    <tr><td>Espingarda</td><td>13</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>N/A</td><td>N/A</td></tr>
+    <tr><td>Rifle de Assalto</td><td>17</td><td>16</td><td>15</td><td>13</td><td>15</td><td>20</td><td>25</td><td>30</td></tr>
+    <tr><td>Rifle Sniper</td><td>30</td><td>25</td><td>25</td><td>20</td><td>15</td><td>16</td><td>17</td><td>20</td></tr>
+    <tr><td>Arcos & Bestas</td><td>15</td><td>13</td><td>15</td><td>17</td><td>20</td><td>22</td><td>N/A</td><td>N/A</td></tr>
+    <tr><td>Lançador de Granadas</td><td>16</td><td>15</td><td>15</td><td>17</td><td>20</td><td>22</td><td>25</td><td>N/A</td></tr>
+    <tr><td>Lança-Mísseis</td><td>17</td><td>16</td><td>15</td><td>15</td><td>20</td><td>20</td><td>25</td><td>30</td></tr>
+  </table>
 
-    <div class="note-box">
-      <h4>Modos de Disparo Alternativos</h4>
-      <ul>
-        <li><strong>Fogo Automático:</strong> Gasta 1 ação e 10 balas. Rola-se contra a VD de fogo automático. O dano é violento: role 2d6 e <strong>multiplique</strong> o valor pelo número que excedeu a VD (limite x3 para SMG, x4 Fuzil).</li>
-        <li><strong>Supressão:</strong> Gasta 10 balas. Força inimigos na área a rolarem um teste de Concentração. Quem falhar é forçado a usar movimento na próxima rodada para se esconder sob cobertura.</li>
-        <li><strong>Escopetas (Cápsula Expansiva):</strong> Atinge todos em uma área de cone (até 6m/3 quadrados) dando o mesmo dano (3d6).</li>
-        <li><strong>Explosivos (Granadas/Foguetes):</strong> Explode em área de 5x5 quadrados (10m). Causa dano completo a personagens e destrói partes do cenário!</li>
-      </ul>
-    </div>
+  <h3>Tabela de Armas à Distância</h3>
+  <table>
+    <tr><th>Arma</th><th>Dano</th><th>Carregador</th><th>CDT</th><th>Mãos</th><th>Oculta?</th><th>Custo</th></tr>
+    <tr><td>Pistola Média</td><td>2d6</td><td>12</td><td>2</td><td>1</td><td>Sim</td><td>50eb</td></tr>
+    <tr><td>Pistola Pesada</td><td>3d6</td><td>8</td><td>2</td><td>1</td><td>Sim</td><td>100eb</td></tr>
+    <tr><td>Pistola Muito Pesada</td><td>4d6</td><td>8</td><td>1</td><td>1</td><td>Não</td><td>100eb</td></tr>
+    <tr><td>SMG</td><td>2d6</td><td>30</td><td>1</td><td>1</td><td>Sim</td><td class="small">Disparo Auto(3) + Supressão</td></tr>
+    <tr><td>SMG Pesada</td><td>3d6</td><td>40</td><td>1</td><td>1</td><td>Não</td><td class="small">Disparo Auto(3) + Supressão</td></tr>
+    <tr><td>Espingarda</td><td>5d6</td><td>4</td><td>1</td><td>2</td><td>Não</td><td>500eb / Cápsula Expansiva</td></tr>
+    <tr><td>Rifle de Assalto</td><td>5d6</td><td>25</td><td>1</td><td>2</td><td>Não</td><td class="small">Disparo Auto(4) + Supressão</td></tr>
+    <tr><td>Rifle Sniper</td><td>5d6</td><td>4</td><td>1</td><td>2</td><td>Não</td><td>500eb</td></tr>
+    <tr><td>Arco/Besta</td><td>4d6</td><td>—</td><td>1</td><td>2</td><td>Não</td><td>Flechas recuperáveis</td></tr>
+    <tr><td>Lançador de Granadas</td><td>6d6</td><td>2</td><td>1</td><td>2</td><td>Não</td><td>Explosivo — área 10×10m</td></tr>
+    <tr><td>Lança-Mísseis</td><td>8d6</td><td>1</td><td>1</td><td>2</td><td>Não</td><td>Explosivo — área 10×10m</td></tr>
+  </table>
 
-    <h2>4. Dano, Armadura e Coberturas</h2>
-    
-    <h3>Ablação e Poder de Parada (PP)</h3>
-    <p>As armaduras têm Poder de Parada (PP). Subtraia o PP do dano total. Se o dano superar o PP, o ataque machuca os PV do alvo E a armadura sofre <strong>Ablação</strong> (seu PP é reduzido permanentemente em 1 ponto).</p>
-    
-    <h3>Cobertura (Cover)</h3>
-    <p><strong>Não existe cobertura parcial.</strong> Ou seu corpo inteiro está escondido, ou você está na linha de tiro.</p>
-    <ul>
-      <li>Coberturas têm Pontos de Vida (ex: um balcão grosso de bar tem 20 PV).</li>
-      <li>Se atirarem na cobertura e quebrarem os PV dela, <strong>o dano excedente daquele ataque se perde e NÃO atinge você</strong>.</li>
-      <li><em>Exceção:</em> Se um Explosivo quebrar a cobertura, você recebe o dano do explosivo integralmente.</li>
-    </ul>
+  <h3>Disparo Concentrado (Aimed Shot) <span class="badge-red badge">-8 no teste</span></h3>
+  <p>Declare <strong>antes</strong> de rolar. Aplica <span class="danger">-8 no teste</span>. Se acertar:</p>
+  <table>
+    <tr><th>Alvo</th><th>Efeito</th></tr>
+    <tr><td>Cabeça</td><td>Dano que ultrapassa o SP da cabeça é <strong>multiplicado por ×2</strong>.</td></tr>
+    <tr><td>Item Segurado</td><td>Se 1+ ponto de dano passar pelo SP, o alvo <strong>derruba o item</strong> na frente dele.</td></tr>
+    <tr><td>Perna</td><td>Se 1+ ponto de dano passar pelo SP, causa a Lesão Crítica de <strong>Perna Quebrada</strong> (se não quebrada ainda).</td></tr>
+  </table>
 
-    <div class="note-box">
-      <h4>Acertos Críticos e Desmembramento</h4>
-      <p>Se você rolar o dano de um ataque e <strong>dois (2) ou mais dados rolarem o número "6"</strong>, ocorre uma Lesão Crítica!</p>
-      <ul>
-        <li>O alvo sofre <strong>+5 de Dano Adicional DIRETAMENTE nos seus PV</strong> (ignorando totalmente o PP da armadura).</li>
-        <li>O Mestre rola na tabela de Lesões Críticas (2d6), causando efeitos variados.</li>
-      </ul>
-    </div>
-
-    <h2>5. Saúde e Estado Mortalmente Ferido</h2>
-
-    <table>
-      <tr>
-        <th>Estado</th>
-        <th>Condição</th>
-        <th>Penalidades Mecânicas</th>
-      </tr>
-      <tr>
-        <td>Levemente Ferido</td>
-        <td>PV abaixo do Máximo até a Metade.</td>
-        <td>Nenhuma penalidade. Tudo certo.</td>
-      </tr>
-      <tr>
-        <td>Gravemente Ferido</td>
-        <td>PV abaixo da Metade até 1.</td>
-        <td><span class="danger">-2 PARA TODAS AS AÇÕES</span> e atributos.</td>
-      </tr>
-      <tr>
-        <td>Mortalmente Ferido</td>
-        <td>PV chega a exatos 0 (PV não fica negativo).</td>
-        <td><span class="danger">-4 em Todas as Ações</span>, <strong>MOV reduzido em 6 (mínimo de 1 quadrado)</strong>, e Testes de Morte por rodada!</td>
-      </tr>
+  <div class="note-box">
+    <h4>Modos de Disparo Alternativos</h4>
+    <p><strong>Fogo Automático:</strong> Custa 1 Ação + 10 balas. Use Habilidade Disparo Automático. Role na tabela de alcance automático. Se acertar, role <span class="cyber-stat">2d6 × (quanto excedeu o DV)</span>, limitado ao máximo da arma (SMG = ×3, Rifle = ×4). Se ambos os dados derem 6 → Lesão Crítica.</p>
+    <table style="margin:10px 0 14px">
+      <tr><th>Arma</th><th>0–6m</th><th>7–12m</th><th>13–25m</th><th>26–50m</th><th>51–100m</th></tr>
+      <tr><td>SMG</td><td>20</td><td>17</td><td>20</td><td>25</td><td>30</td></tr>
+      <tr><td>Rifle de Assalto</td><td>22</td><td>20</td><td>17</td><td>20</td><td>25</td></tr>
     </table>
+    <p><strong>Disparo Supressivo:</strong> Custa 1 Ação + 10 balas. Todos a pé dentro de 25m e na sua linha de visão rolam <span class="cyber-stat">WILL + Concentração + 1d10</span> vs. <span class="cyber-stat">REF + Disparo Automático + 1d10</span>. Quem falha deve usar sua próxima Ação de Movimento para se esconder atrás de cobertura.</p>
+    <p><strong>Cápsula Expansiva (Espingarda):</strong> Não pode ser usada com Disparo Concentrado. Role 1 teste DV13 — se acertar, <em>todos</em> os alvos à sua frente dentro de 6m recebem <strong>3d6 de dano</strong>. Alvos com REF 8+ ainda podem esquivar individualmente.</p>
+    <p><strong>Explosivos:</strong> Afetam área de <strong>10×10m</strong> (5×5 quadrados) centrada no alvo pretendido. Todos dentro recebem o mesmo dano. Alvos com REF 8+ podem esquivar se rolarem acima do teste original. Cobertura protege — a menos que o explosivo destrua a cobertura, onde o dano é recebido integralmente.</p>
+    <p><strong>Flechas (Arco/Besta):</strong> Não precisam de Ação de Recarregar. Flechas básicas sempre podem ser recuperadas após o disparo.</p>
+  </div>
 
-    <h3>Resistência à Morte (Death Saves)</h3>
-    <p>Quando chegar a 0 PV no início do seu turno, você deve fazer uma Resistência à Morte.</p>
-    <ul>
-      <li>Role <span class="cyber-stat">1d10</span>. O valor deve ser ESTRITAMENTE ABAIXO do seu Atributo Base de CORPO. (Ex: Corpo 7, tem que rolar 6 ou menos). Se tirar 10 natural, você morre.</li>
-      <li><strong>Agravamento:</strong> A cada rodada passada mortalmente ferido, a penalidade aumenta em 1 (fica 1 ponto mais difícil passar).</li>
-      <li><strong>Tomando Dano no Chão:</strong> Se o personagem for atacado mortalmente ferido, a dificuldade do teste de morte piora MAIS AINDA, e ele recebe uma nova lesão crítica automaticamente. Estabilize logo seus amigos ou chame um corpo falso!</li>
-    </ul>
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>4. Combate Corpo a Corpo</h2>
+  <div class="formula"><span class="cyber-stat">DEX + Habilidade Armas Brancas + 1d10</span> vs. <span class="cyber-stat">DEX + Evasão + 1d10</span></div>
 
-    <div class="footer">
-      // GERADO PARA O SISTEMA NIGHT_CITY.RPG ASSISTANT // STAY ALIVE, CHOMBA //
+  <h3>Tabela de Armas Brancas</h3>
+  <table>
+    <tr><th>Categoria</th><th>Exemplos</th><th>Dano</th><th>CDT</th><th>Oculta?</th><th>Custo</th></tr>
+    <tr><td>Leve</td><td>Faca de Combate, Tomahawk</td><td>1d6</td><td>2</td><td>Sim</td><td>50eb</td></tr>
+    <tr><td>Média</td><td>Taco, Pé-de-Cabra, Facão</td><td>2d6</td><td>2</td><td>Não</td><td>50eb</td></tr>
+    <tr><td>Pesada</td><td>Cano, Espada, Bastão com Espetos</td><td>3d6</td><td>2</td><td>Não</td><td>100eb</td></tr>
+    <tr><td>Muito Pesada</td><td>Motosserra, Marreta, Naginata</td><td>4d6</td><td>1</td><td>Não</td><td>500eb</td></tr>
+  </table>
+  <ul>
+    <li>Armas Brancas ignoram <strong>metade do SP do defensor</strong> (arredonde para cima).</li>
+    <li>Personagem com <strong>CORPO 8+</strong> pode usar arma de duas mãos em uma só.</li>
+    <li>Armas Muito Pesadas <strong>não</strong> podem atacar duas vezes por Ação.</li>
+  </ul>
+
+  <h3>Briga (Unarmed / Cyberbraço)</h3>
+  <div class="formula"><span class="cyber-stat">DEX + Briga + 1d10</span> vs. <span class="cyber-stat">DEX + Evasão + 1d10</span></div>
+  <table>
+    <tr><th>CORPO</th><th>≤ 4</th><th>5–6 (ou ≤4 c/ Cyberbraço)</th><th>7–10</th><th>11+</th></tr>
+    <tr><td>Dano</td><td>1d6</td><td>2d6</td><td>3d6</td><td>4d6</td></tr>
+  </table>
+  <p>Ataques de Briga <strong>não</strong> ignoram metade do SP. Com Cyberbraço, o dano mínimo é 2d6.</p>
+
+  <h3>Agarramento, Estrangulamento & Escudo Humano</h3>
+  <ul>
+    <li><strong>Agarrar:</strong> Role <span class="cyber-stat">DEX + Briga + 1d10</span> vs. defensor. Se ganhar, os dois sofrem <span class="danger">-2 em todas as Ações</span> enquanto agarrados. O defensor não pode usar Ação de Movimento e é arrastado pelo atacante.</li>
+    <li><strong>Derrubar:</strong> Se for atacante no agarramento, use uma Ação para derrubar o alvo, causando dano igual ao seu <strong>CORPO diretamente no HP</strong> (ignora armadura). Termina o agarramento e deixa o alvo Pronado.</li>
+    <li><strong>Estrangular:</strong> Se for atacante no agarramento, use uma Ação para causar dano igual ao seu <strong>CORPO diretamente no HP</strong> (ignora armadura). Se reduzir alguém de 1+ HP a menos de 0, eles ficam com 1 HP e inconscientes. Estrangulando o mesmo alvo por 3 rodadas consecutivas → inconsciente independente do HP.</li>
+    <li><strong>Escudo Humano:</strong> Se for atacante, use uma Ação para "equipar" o alvo como escudo (necessita de mão livre). Você fica em cobertura. O escudo <em>não</em> pode bloquear ataques corpo a corpo nem Disparos Concentrados na cabeça. Se o escudo morrer, ele vira um cadáver-escudo com HP = CORPO que tinha em vida.</li>
+  </ul>
+
+  <h3>Artes Marciais</h3>
+  <div class="formula"><span class="cyber-stat">DEX + Movimento Especial + 1d10</span> vs. <span class="cyber-stat">DEX + Evasão + 1d10</span> ou DV fixo</div>
+  <p>CDT 2. Ignoram metade do SP do defensor. Dano igual à tabela de Briga (baseado no CORPO). Cada Forma possui Movimentos Especiais exclusivos. Exemplos:</p>
+  <ul>
+    <li><strong>Aikido — Aperto de Ferro:</strong> DV15. Se tiver alvo capturado, próximas tentativas de escape do alvo recebem -2 adicional, e ele não pode usar ataques à distância.</li>
+    <li><strong>Karate — Golpe Quebra Ossos (req. WILL 8+):</strong> Em vez de 2 ataques, faça um único — se acertar, causa <em>Costelas Quebradas</em>. Com -8 no teste, pode mirar a cabeça para causar <em>Crânio Rachado</em>.</li>
+    <li><strong>Judo — Contra-Queda:</strong> Se evitou todos os ataques corpo a corpo desde o último turno, use DV15 para derrubar um atacante sem precisar agarrá-lo primeiro.</li>
+    <li><strong>Taekwondo — Golpe de Pontos de Pressão (req. WILL 8+):</strong> Causa <em>Lesão Espinhal</em>. Com -8 no teste, pode mirar a cabeça para <em>Lesão Cerebral</em>.</li>
+    <li><strong>Taekwondo — Voadora (req. MOVE 8+, mover ≥4m):</strong> Causa dano + derruba o alvo e retira de veículo sem cabine fechada.</li>
+    <li><strong>Recuperação (Todas as Formas):</strong> Ao usar Ação Levantar-se, bata DV13 para se levantar sem gastar a Ação.</li>
+  </ul>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>5. Outras Formas de Dano</h2>
+  <div class="grid-2">
+    <div>
+      <h3>Fogo</h3>
+      <table>
+        <tr><th>Intensidade</th><th>Exemplo</th><th>Dano por Turno (direto ao HP)</th></tr>
+        <tr><td>Brando</td><td>Fogueira</td><td>2</td></tr>
+        <tr><td>Intenso</td><td>Incêndio</td><td>4</td></tr>
+        <tr><td>Mortal</td><td>Termite</td><td>6</td></tr>
+      </table>
+      <p>Gaste uma Ação para se livrar do fogo. Armadura <strong>não</strong> é diminuída por fogo.</p>
+    </div>
+    <div>
+      <h3>Venenos</h3>
+      <table>
+        <tr><th>Intensidade</th><th>DV</th><th>Dano (direto ao HP)</th></tr>
+        <tr><td>Brando</td><td>11</td><td>1d6</td></tr>
+        <tr><td>Intenso</td><td>13</td><td>2d6</td></tr>
+        <tr><td>Mortal</td><td>15</td><td>3d6</td></tr>
+      </table>
+      <p>Role <span class="cyber-stat">Resistir Tortura/Drogas</span> vs. o DV. Armadura não é afetada.</p>
     </div>
   </div>
 
+  <ul>
+    <li><strong>Afogamento/Asfixia:</strong> Prenda respiração por CORPO minutos. Quando se afoga, recebe <strong>CORPO de dano direto ao HP</strong> no início de cada turno. No espaço, recebe também 1d6 nas stats INT, REF e DEX por turno. Se INT = 0 → morte.</li>
+    <li><strong>Eletrocussão:</strong> <span class="danger">6d6 de dano</span> (absorvido pela armadura). Se não se afastar da fonte, repete no início de cada turno seguinte.</li>
+    <li><strong>Queda:</strong> Cai 40m/turno. Ao colidir após 10m+, recebe <span class="danger">2d6 a cada 10m caídos</span> (absorvido pela armadura). Teste Atletismo DV15 ou sofre Perna Quebrada. Personagens com 2 Cyberpernas ignoram este dano (mas não acima de 30m). Queda de arranha-céu sem paraquedas = morte automática.</li>
+    <li><strong>Radiação Baixa:</strong> Efeitos lentos e crônicos, a critério do GM. <strong>Alta:</strong> Tratado como fogo brando contínuo enquanto na área.</li>
+  </ul>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>6. Armadura</h2>
+  <table>
+    <tr><th>Tipo de Armadura</th><th>SP</th><th>Penalidade</th><th>Custo</th></tr>
+    <tr><td>Couros</td><td>4</td><td>Nenhuma</td><td>20eb</td></tr>
+    <tr><td>Kevlar®</td><td>7</td><td>Nenhuma</td><td>50eb</td></tr>
+    <tr><td>Blindagem Leve</td><td>11</td><td>Nenhuma</td><td>100eb</td></tr>
+    <tr><td>Traje Corporal</td><td>11</td><td>Nenhuma</td><td>1.000eb</td></tr>
+    <tr><td>Blindagem Média</td><td>12</td><td class="danger">-2 REF, DEX e MOVE</td><td>100eb</td></tr>
+    <tr><td>Blindagem Pesada</td><td>13</td><td class="danger">-2 REF, DEX e MOVE</td><td>500eb</td></tr>
+    <tr><td>Flak</td><td>15</td><td class="danger">-4 REF, DEX e MOVE</td><td>500eb</td></tr>
+    <tr><td>Metalgear®</td><td>18</td><td class="danger">-4 REF, DEX e MOVE</td><td>5.000eb</td></tr>
+  </table>
+  <ul>
+    <li>SP de múltiplas armaduras <strong>não empilha</strong> — usa-se apenas o maior SP por local.</li>
+    <li>A penalidade de armadura se aplica <strong>uma única vez</strong>, pelo item mais penalizador que você veste.</li>
+    <li>Armadura pode ser comprada separadamente para <strong>corpo</strong> e <strong>cabeça</strong>.</li>
+  </ul>
+
+  <h3>Escudos</h3>
+  <table>
+    <tr><th>Escudo</th><th>HP</th><th>Custo</th></tr>
+    <tr><td>Escudo Blindado (policarbonato)</td><td>10</td><td>100eb</td></tr>
+    <tr><td>Cadáver (Corpo)</td><td>CORPO que tinha em vida</td><td>—</td></tr>
+  </table>
+  <p>Equipar e soltar um escudo custa uma Ação. Enquanto empunha um escudo com HP, você está em cobertura. Ao ser atacado por alvo visível, pode interpor o escudo — ele absorve todo o ataque. A 0 HP, o escudo é destruído.</p>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>7. Dano, Ablação e Cobertura</h2>
+  <h3>Sofrendo Dano</h3>
+  <ol style="color:#c0d0e0;font-size:14px;padding-left:20px">
+    <li>O atacante rola o dano.</li>
+    <li>Subtraia o <strong>SP da armadura</strong> no local atingido (sempre corpo, exceto Disparo Concentrado na cabeça). O restante reduz os PV do alvo.</li>
+    <li>Se qualquer dano foi absorvido pelo SP <em>e</em> ainda causou dano, a armadura sofre <strong>Ablação</strong>: SP reduzido permanentemente em 1 até ser reparada.</li>
+  </ol>
+  <p class="small">Fogo, venenos e asfixia ignoram a armadura e não causam ablação.</p>
+
+  <h3>Cobertura — Regras de Ouro</h3>
+  <ul>
+    <li><strong>Não há cobertura parcial.</strong> Ou você está totalmente escondido, ou está na linha de tiro.</li>
+    <li>Se o inimigo tem linha de visão sobre você, você <em>não</em> está em cobertura.</li>
+    <li>Coberturas têm HP. Uma seção 2×2m pode ser atacada. A 0 HP, é destruída e o dano excedente do ataque se perde — você só pode ser atingido no próximo ataque. <strong>Exceção:</strong> explosivos destroem a cobertura e o dano integral atinge quem estava atrás.</li>
+  </ul>
+
+  <h3>HP de Coberturas</h3>
+  <table>
+    <tr><th>Tipo</th><th>Grossa</th><th>Fina</th></tr>
+    <tr><td>Aço</td><td>50 HP</td><td>25 HP</td></tr>
+    <tr><td>Pedra</td><td>40 HP</td><td>20 HP</td></tr>
+    <tr><td>Vidro Blindado</td><td>30 HP</td><td>15 HP</td></tr>
+    <tr><td>Concreto</td><td>25 HP</td><td>10 HP</td></tr>
+    <tr><td>Madeira</td><td>20 HP</td><td>5 HP</td></tr>
+    <tr><td>Gesso/Espuma/Plástico</td><td>15 HP</td><td>0 HP (Sem Cobertura)</td></tr>
+  </table>
+
+  <table>
+    <tr><th>Exemplo</th><th>Material</th><th>HP</th></tr>
+    <tr><td>Porta de Cofre / Hidrante</td><td>Aço Grosso</td><td>50 HP</td></tr>
+    <tr><td>Janela de Banco / Barricada</td><td>Vidro Blindado Grosso</td><td>30 HP</td></tr>
+    <tr><td>Porta de Carro / Terminal de Dados</td><td>Aço Grosso</td><td>25 HP</td></tr>
+    <tr><td>Refrigerador / Contêiner</td><td>Aço Fino</td><td>25 HP</td></tr>
+    <tr><td>Mesa Virada / Balcão de Bar</td><td>Madeira/Aço Fino</td><td>5–20 HP</td></tr>
+    <tr><td>Árvore / Estátua</td><td>Madeira Grossa / Pedra</td><td>20–50 HP</td></tr>
+    <tr><td>Cubículo / Vidro Comum</td><td>Gesso/Plástico Fino</td><td>0 HP (Sem Cobertura)</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>8. Saúde e Estados de Ferimento</h2>
+  <table>
+    <tr><th>Estado</th><th>Limite de HP</th><th>Efeito</th><th>DV Estabilização</th></tr>
+    <tr><td>Levemente Ferido</td><td>Abaixo do máximo</td><td>Nenhum</td><td>DV 10</td></tr>
+    <tr><td class="highlight">Seriamente Ferido</td><td>Abaixo de ½ HP</td><td><span class="danger">-2 em todas as Ações</span></td><td>DV 13</td></tr>
+    <tr><td class="danger">Mortalmente Ferido</td><td>Abaixo de 1 HP (0)</td><td><span class="danger">-4 em todas as Ações</span>, MOV -6 (mín. 1), Death Save a cada turno. Cada ataque sofrido agora causa Lesão Crítica automática + piora o Death Save Base em 1.</td><td>DV 15 (retorna a 1 HP e inconsciente)</td></tr>
+    <tr><td class="danger">Morto</td><td>Falha no Death Save</td><td>Nunca mais volta</td><td>—</td></tr>
+  </table>
+
+  <h3>Resistência à Morte (Death Saves)</h3>
+  <p>No início de cada turno em que você está Mortalmente Ferido, role <span class="cyber-stat">1d10</span>. Para sobreviver, o resultado deve ser <strong>estritamente abaixo do seu CORPO</strong>. Tirou 10 → morte automática.</p>
+  <ul>
+    <li>A cada Death Save rolado, a penalidade acumula +1 (progressivamente mais difícil).</li>
+    <li>Ser estabilizado reseta a penalidade para o Death Save Base (que pode já ter sido aumentado por Lesões Críticas).</li>
+  </ul>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>9. Lesões Críticas</h2>
+  <div class="note-box">
+    <h4>Quando ocorre</h4>
+    <p>Dois ou mais dados de dano rolarem <strong>6</strong> → Lesão Crítica! O alvo sofre <span class="danger">+5 de Dano Bônus direto ao HP</span> (ignora SP) e o GM rola 2d6 na tabela abaixo. Personagens Mortalmente Feridos sofrem Lesão Crítica <em>automaticamente</em> a cada ataque.</p>
+  </div>
+
+  <h3>Lesões Críticas no Corpo (2d6)</h3>
+  <table>
+    <tr><th>2d6</th><th>Lesão</th><th>Efeito</th></tr>
+    <tr><td>2</td><td class="danger">Braço Desmembrado</td><td>Braço perdido. Derruba item da mão. Death Save Base +1.</td></tr>
+    <tr><td>3</td><td class="danger">Mão Desmembrada</td><td>Mão perdida. Derruba item. Death Save Base +1.</td></tr>
+    <tr><td>4</td><td>Colapso no Pulmão</td><td>-2 no MOVE (mín. 1). Death Save Base +1.</td></tr>
+    <tr><td>5</td><td>Costelas Quebradas</td><td>A cada turno que mover 4m+, recebe novamente o dano bônus (+5) diretamente no HP.</td></tr>
+    <tr><td>6</td><td>Braço Quebrado</td><td>Braço inutilizável. Derruba itens da mão.</td></tr>
+    <tr><td>7</td><td>Objeto Estranho Alojado</td><td>Efeito específico por localização.</td></tr>
+    <tr><td>8</td><td>Perna Quebrada</td><td>-4 no MOVE (mín. 1).</td></tr>
+    <tr><td>9</td><td>Lesão Muscular</td><td>-2 para ataques corpo a corpo.</td></tr>
+    <tr><td>10</td><td>Lesão na Coluna Vertebral</td><td>No próximo turno, não pode fazer uma Ação (mas pode mover). Death Save Base +1.</td></tr>
+    <tr><td>11</td><td>Dedos Esmagados</td><td>-4 em todas as Ações com esta mão.</td></tr>
+    <tr><td>12</td><td class="danger">Perna Desmembrada</td><td>Perna perdida. -6 no MOVE (mín. 1). Não pode desviar de ataques. Death Save Base +1.</td></tr>
+  </table>
+
+  <h3>Lesões Críticas na Cabeça (2d6)</h3>
+  <table>
+    <tr><th>2d6</th><th>Lesão</th><th>Efeito</th></tr>
+    <tr><td>2</td><td class="danger">Olho Perdido</td><td>-4 em Ataques à Distância e Percepção visual. Death Save Base +1.</td></tr>
+    <tr><td>3</td><td class="danger">Lesão Cerebral</td><td>-2 em todas as Ações. Death Save Base +1.</td></tr>
+    <tr><td>4</td><td>Olho Danificado</td><td>-2 em Ataques à Distância e Percepção visual.</td></tr>
+    <tr><td>5</td><td>Contusão</td><td>-2 em todas as Ações.</td></tr>
+    <tr><td>6</td><td>Maxilar Quebrado</td><td>A cada turno que mover 4m+, recebe novamente o dano bônus direto no HP.</td></tr>
+    <tr><td>7</td><td>Objeto Estranho Alojado</td><td>-4 em Ações envolvendo a Fala.</td></tr>
+    <tr><td>8</td><td>Traumatismo Cervical</td><td>Death Save Base +1.</td></tr>
+    <tr><td>9</td><td>Traumatismo Craniano</td><td>Disparos Concentrados na cabeça multiplicam dano que passa o SP por ×3 em vez de ×2. Death Save Base +1.</td></tr>
+    <tr><td>10</td><td>Ouvido Danificado</td><td>Se mover 4m+ em um turno, não pode usar Ação de Movimento no próximo. -2 em Percepção auditiva.</td></tr>
+    <tr><td>11</td><td class="danger">Traqueia Esmagada</td><td>Não pode falar. Death Save Base +1.</td></tr>
+    <tr><td>12</td><td class="danger">Orelha Perdida</td><td>Mesmos efeitos de Ouvido Danificado com -4. Death Save Base +1.</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>10. Combate com Veículos</h2>
+  <h3>Pontos de Dano Estruturais (PDE)</h3>
+  <p>Veículos têm PDE em vez de HP. Com 1+ PDE, ainda se move. A 0 PDE, está destruído e não serve como cobertura.</p>
+  <table>
+    <tr><th>Veículo</th><th>PDE</th><th>Assentos</th><th>MOVE (Combate)</th><th>Velocidade Máx.</th></tr>
+    <tr><td>Motocicleta Estradeira</td><td>35</td><td>2</td><td>20</td><td>100 MPH</td></tr>
+    <tr><td>Superbike</td><td>35</td><td>2</td><td>60</td><td>300 MPH</td></tr>
+    <tr><td>Carro Compacto</td><td>50</td><td>4</td><td>20</td><td>100 MPH</td></tr>
+    <tr><td>Carro Esportivo</td><td>50</td><td>4</td><td>40</td><td>200 MPH</td></tr>
+    <tr><td>Super Carro</td><td>50</td><td>2</td><td>60</td><td>300 MPH</td></tr>
+    <tr><td>Gyrocóptero</td><td>35</td><td>2</td><td>20</td><td>100 MPH</td></tr>
+    <tr><td>Helicóptero</td><td>60</td><td>4</td><td>40</td><td>200 MPH</td></tr>
+    <tr><td>AV-4 Polivalente</td><td>100</td><td>6</td><td>40</td><td>200 MPH</td></tr>
+    <tr><td>AV-9 Super Aerodyne</td><td>60</td><td>2</td><td>60</td><td>300 MPH</td></tr>
+  </table>
+  <ul>
+    <li>Entrar em um veículo é uma Ação. Sair é apenas movimento. Ligar/desligar = Ação.</li>
+    <li>Condução básica não exige Ação se <span class="cyber-stat">REF + Habilidade de Controle > 9</span>. Caso contrário, role DV10 por turno ou perca o controle.</li>
+    <li>O MOVE do veículo substitui o MOVE do condutor. O condutor não usa Ação de Movimento.</li>
+    <li>Vidro comum não tem HP e não oferece cobertura. Vidro Blindado = upgrade Nômade.</li>
+  </ul>
+
+  <h3>Manobras com Veículos</h3>
+  <p>Manobras perigosas gastam <strong>Ação + Ação de Movimento</strong>. Falhar = perda de controle.</p>
+  <table>
+    <tr><th>Manobra</th><th>DV</th></tr>
+    <tr><td>Desviar / Curva Fechada / Parada de Emergência</td><td>13</td></tr>
+    <tr><td>Cavalo de Pau / Fazer um Salto</td><td>17</td></tr>
+    <tr><td>Aterrissagem (Aéreo)</td><td>13</td></tr>
+    <tr><td>Manobra Acrobática (Aéreo)</td><td>17</td></tr>
+  </table>
+
+  <h3>Colisões</h3>
+  <p>Ao bater em algo com HP: o veículo e o objeto colidido recebem <span class="danger">6d6 de dano</span>, e cada pessoa envolvida sofre uma <strong>Lesão Crítica por Traumatismo</strong>. Esquivar a pé de um veículo = DEX + Evasão + 1d10 vs. DV13.</p>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>11. Reputação e Facedowns</h2>
+  <p>Reputação é atribuída pelo GM com base nas ações do personagem. Quando você encontra novas pessoas, elas rolam <span class="cyber-stat">1d10</span> — se rolarem abaixo do seu Nível de Reputação, já ouviram falar de você.</p>
+
+  <table>
+    <tr><th>Nível</th><th>Alcance da Fama</th></tr>
+    <tr><td>1–2</td><td>Quem estava lá, e amigos próximos.</td></tr>
+    <tr><td>3–4</td><td>Colegas, conhecidos e área local.</td></tr>
+    <tr><td>5–6</td><td>Pessoas além da área local te reconhecem pelo nome ou de vista.</td></tr>
+    <tr><td>7–8</td><td>Notícias escritas sobre você. Manchetes regulares.</td></tr>
+    <tr><td>9–10</td><td>Apareça na TV. Reconhecido mundialmente.</td></tr>
+  </table>
+
+  <h3>Facedown</h3>
+  <div class="formula"><span class="cyber-stat">COOL + Reputação + 1d10</span> vs. <span class="cyber-stat">COOL + Reputação + 1d10</span><br><span class="small">Reputação por covardia conta como número negativo.</span></div>
+  <p>Em empate, ambos ficam inseguros e nada acontece. O perdedor escolhe: <strong>recuar</strong> ou sofrer <span class="danger">-2 em todas as Ações contra este adversário</span> até derrotá-lo uma vez.</p>
+
+  <div class="footer">// GERADO PARA O SISTEMA NIGHT_CITY.RPG ASSISTANT // STAY ALIVE, CHOMBA //</div>
+</div>
 </body>
 </html>

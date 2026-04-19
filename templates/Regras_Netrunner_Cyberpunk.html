@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regras de Trilha Rede - Cyberpunk RED</title>
+  <style>
+    :root {
+      --bg: #0a0e14;
+      --bg2: #10161f;
+      --fg: #e6f1ff;
+      --dim: #6a7891;
+      --accent: #00ffe1;
+      --accent2: #ff2e88;
+      --accent3: #ffd400;
+      --danger: #ff4d4d;
+      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: 
+        radial-gradient(circle at 50% 10%, rgba(0,255,225,.05), transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(255,46,136,.05), transparent 40%),
+        var(--bg);
+      color: var(--fg);
+      font-family: var(--mono);
+      margin: 0;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg2);
+      border: 1px solid rgba(0,255,225,.2);
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(0, 255, 225, 0.05);
+    }
+
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--accent);
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0,255,225,.4);
+    }
+
+    .tag {
+      color: var(--accent2);
+      font-size: 14px;
+      letter-spacing: 2px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 40px 0 20px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+    }
+
+    h3 {
+      color: var(--accent3);
+      font-size: 16px;
+      margin-top: 25px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #c0d0e0;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+      color: #c0d0e0;
+    }
+
+    li { margin-bottom: 10px; }
+
+    .highlight { color: var(--accent3); font-weight: bold; }
+    .danger { color: var(--danger); font-weight: bold; }
+    .cyber-stat { color: var(--accent); }
+
+    .note-box {
+      background: rgba(0, 255, 225, 0.05);
+      border: 1px solid rgba(0, 255, 225, 0.3);
+      border-left: 4px solid var(--accent);
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 2px;
+    }
+
+    .note-box h4 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid rgba(0,255,225,.2);
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(0,255,225,.1);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+    
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--dim);
+      border-top: 1px solid rgba(0,255,225,.1);
+      padding-top: 20px;
+    }
+    
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>DataTerm: A Rede</h1>
+      <span class="tag">// MANUAL DO TRILHA REDES (NETRUNNER) - CYBERPUNK RED //</span>
+    </header>
+
+    <h2>1. A Arquitetura da Rede e o Cyberdeck</h2>
+    <p>A internet global foi destruída há muito tempo por Rache Bartmoss. Hoje, a Rede é formada por sub-redes isoladas (ilhas) chamadas de <strong>Arquiteturas de Rede</strong>. Cada prédio, base ou corporação possui a sua.</p>
+    <ul>
+      <li><span class="highlight">O Fator Presencial:</span> Para invadir uma rede (como as câmeras de um restaurante da Máfia), você precisa estar fisicamente próximo ao <strong>Ponto de Acesso</strong>: o alcance máximo é de <strong>6 metros (ou 3 quadrados no grid)</strong>. Nada de hackear de casa.</li>
+      <li><span class="highlight">Cyberdeck:</span> É o aparelho portátil que você usa para fazer a invasão. Ele usa óculos de realidade aumentada, o que significa que o Netrunner consegue ver e escutar o que acontece no mundo real enquanto navega na Rede!</li>
+    </ul>
+
+    <h2>2. Ações de Carne vs. Ações de Rede</h2>
+    <p>Durante uma rodada de combate, o Netrunner precisa gerenciar seu foco entre o que acontece no mundo físico e no mundo virtual.</p>
+    
+    <div class="grid-2">
+      <div>
+        <h3>Ações de Carne (Meat Actions)</h3>
+        <p>São as ações normais realizadas no mundo real: atirar, dar um soco, correr, comer, pegar um item. Você tem o movimento normal e <strong class="danger">1 Ação Principal</strong> de carne por rodada, igual a todo mundo.</p>
+      </div>
+      
+      <div>
+        <h3>Ações de Rede (Net Actions)</h3>
+        <p>Sua habilidade de Interface permite ações ultrarrápidas no ciberespaço. O número de Ações de Rede que você tem por turno depende do seu <strong>Nível de Interface</strong> (ex: Interface 4 concede 3 Ações de Rede).</p>
+      </div>
+    </div>
+    <br>
+    <p>O que gasta <strong>uma Ação de Rede?</strong></p>
+    <ul>
+      <li>Conectar/Desconectar do Ponto de Acesso (Jack in / Jack out).</li>
+      <li>Usar uma Habilidade de Interface.</li>
+      <li>Ativar ou Desativar um Programa (Nota: a instalação de um novo programa no deck demora 1 hora e não pode ser feita em combate).</li>
+    </ul>
+
+    <h2>3. Habilidades de Interface</h2>
+    <p>Quando conectado, sua ferramenta principal é a sua mente. Você não usa atributos normais aqui, as rolagens na rede geralmente seguem a fórmula: <span class="cyber-stat">1d10 + Nível de Interface (+ Bônus de Programas) vs. Valor de Dificuldade (VD)</span>. Se a rolagem empatar, o defensor ou obstáculo vence.</p>
+
+    <table>
+      <tr>
+        <th>Habilidade</th>
+        <th>Efeito na Rede</th>
+      </tr>
+      <tr>
+        <td><strong>Scanner</strong> (Escanear)</td>
+        <td>Usado no mundo da carne para encontrar Pontos de Acesso próximos escondidos.</td>
+      </tr>
+      <tr>
+        <td><strong>Pathfinder</strong> (Desbravador)</td>
+        <td>Mapeia os próximos andares da Arquitetura para ver o que vem pela frente (ex: descobre se o próximo nível é uma Senha ou um Gelo Negro).</td>
+      </tr>
+      <tr>
+        <td><strong>Backdoor</strong> (Porta dos Fundos)</td>
+        <td>Hackear para quebrar Senhas (VD variável) de um andar.</td>
+      </tr>
+      <tr>
+        <td><strong>Control</strong> (Controle)</td>
+        <td>Permite assumir Nódulos de Controle (Câmeras, Portas Automáticas, Drones, Turretas, Elevadores).</td>
+      </tr>
+      <tr>
+        <td><strong>Identify</strong> (Identificar)</td>
+        <td>Analisa arquivos suspeitos e dados encontrados na Rede para descobrir seu conteúdo ou valor.</td>
+      </tr>
+      <tr>
+        <td><strong>Cloak</strong> (Camuflagem)</td>
+        <td>Limpa rastros e registros após hackear para garantir que corporações não te rastreiem e batam na sua porta na semana seguinte.</td>
+      </tr>
+      <tr>
+        <td><strong>Slide</strong> (Despistar)</td>
+        <td>Tenta fugir de um Gelo Negro (Black ICE) sem entrar em combate e descer para o próximo nível. Falhar nessa fuga costuma ser letal.</td>
+      </tr>
+      <tr>
+        <td><strong>Zap</strong></td>
+        <td>Um ataque rápido mental que dá <span class="danger">1d6 de dano</span> em outro Netrunner, Demônio ou Black ICE. Gasta uma Ação de Rede.</td>
+      </tr>
+      <tr>
+        <td><strong>Vírus</strong></td>
+        <td>Só pode ser usado ao chegar no "Coração" (último andar) da rede. Altera a arquitetura permanentemente (ex: apagar arquivos, fritar quem conectar). O VD é decidido pelo Mestre com base no quão absurda for a sua ideia.</td>
+      </tr>
+    </table>
+
+    <div class="note-box">
+      <h4>O Risco da Desconexão Forçada (Jack Out Inseguro)</h4>
+      <p>Você pode usar a Ação de Rede "Desconectar" para sair em segurança a qualquer momento. Porém, se alguém bater no seu corpo e te empurrar para longe do raio de 6 metros, ou você for chutado da rede por um inimigo de forma insegura, você vai sofrer os ataques e efeitos de <strong>todos os Black ICE</strong> despertos daquela arquitetura de uma só vez direto no seu cérebro.</p>
+    </div>
+
+    <h2>4. Programas do Cyberdeck</h2>
+    <p>O seu Cyberdeck é a sua arma (o padrão básico tem 7 espaços para carregar programas). Os programas se dividem em três tipos:</p>
+    
+    <ul>
+      <li><span class="highlight">Boosters (Reforços):</span> Quando ativados, dão buffs passivos para rolagens de Interface. Exemplo: O programa <em>Worm (Minhoca)</em> concede um bônus de +2 em todos os testes de Backdoor para quebrar senhas.</li>
+      <li><span class="danger">Atacantes (Espadas/Martelos):</span> Programas pesados (ex: Sword, Banhammer) usados em combate virtual para dar d6 de dano massivo na defesa inimiga. Após atacar, eles se desativam sozinhos.</li>
+      <li><span class="cyber-stat">Defensores (Escudos):</span> Reduzem, mitigam ou anulam dano direto que iria para a mente do Netrunner ou impedem o deck de ser destruído. Cada programa tem seus próprios Pontos de Vida (REZ). Se o REZ chegar a 0, ele é desativado ou até destruído.</li>
+    </ul>
+
+    <h2>5. Gelo Negro (Black ICE) e Combate na Rede</h2>
+    <p>Conforme você desce de elevador na Arquitetura da Rede, você irá esbarrar em armadilhas de combate: O temido <strong>Gelo Negro (Black ICE)</strong>. São "cães de guarda digitais" como o <em>Hell Hound</em>.</p>
+
+    <h3>O Bote Inicial do ICE</h3>
+    <p>Assim que o Netrunner entra no andar, o Black ICE já ataca instantaneamente! Para desviar desse primeiro contato letal, role a sua esquiva:</p>
+    <div style="text-align: center; font-size: 16px; margin: 20px 0; padding: 15px; border: 1px dashed var(--danger); color: var(--fg);">
+      <span class="cyber-stat">1d10 + Nível de Interface + Bônus de Velocidade</span> <br>VS <br><span class="danger">1d10 + Velocidade do Black ICE</span>
+    </div>
+    <p>Se o ICE vencer, você toma o efeito (que pode ser dano ou até colocar fogo em você no mundo real!). Independentemente de desviar ou não, <strong>o Gelo Negro vai para o topo da Ordem de Iniciativa</strong> e sempre baterá primeiro nas próximas rodadas.</p>
+
+    <h3>Trocando Tiros no Ciberespaço</h3>
+    <p>Caso o combate continue, os ataques padrão entre Netrunner e ICE (ou contra Demônios/Netrunners oponentes) rodam o seguinte cálculo básico usando seus programas de ataque contra a defesa alheia:</p>
+    
+    <div style="text-align: center; font-size: 16px; margin: 20px 0; padding: 15px; border: 1px dashed var(--accent); color: var(--fg);">
+      <span class="cyber-stat">Atacante: 1d10 + Interface + Ataque do Programa</span> <br>VS <br><span class="danger">Defensor: 1d10 + Defesa do Alvo (Interface ou ICE)</span>
+    </div>
+
+    <div class="footer">
+      // GERADO PARA O SISTEMA NIGHT_CITY.RPG ASSISTANT // ICE-9 WANTS TO KNOW YOUR LOCATION //
+    </div>
+  </div>
+
+</body>
+</html>

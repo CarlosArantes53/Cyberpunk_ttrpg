@@ -6,256 +6,489 @@
   <title>Regras de Perícias e Habilidades - Cyberpunk RED</title>
   <style>
     :root {
-      --bg: #0a0e14;
-      --bg2: #10161f;
-      --fg: #e6f1ff;
-      --dim: #6a7891;
-      --accent: #00ffe1;
-      --accent2: #ff2e88;
-      --accent3: #ffd400;
-      --danger: #ff4d4d;
-      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      --bg: #0a0e14; --bg2: #10161f; --fg: #e6f1ff; --dim: #6a7891;
+      --accent: #00ffe1; --accent2: #ff2e88; --accent3: #ffd400;
+      --danger: #ff4d4d; --mono: "JetBrains Mono","Fira Code",Consolas,monospace;
     }
-
     * { box-sizing: border-box; }
-
-    body {
-      background: 
-        radial-gradient(circle at 80% 0%, rgba(255,212,0,.05), transparent 40%),
-        radial-gradient(circle at 20% 100%, rgba(0,255,225,.05), transparent 40%),
-        var(--bg);
-      color: var(--fg);
-      font-family: var(--mono);
-      margin: 0;
-      padding: 40px 20px;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--bg2);
-      border: 1px solid rgba(0,255,225,.2);
-      padding: 40px;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 255, 225, 0.05);
-    }
-
-    header {
-      border-bottom: 2px solid var(--accent3);
-      padding-bottom: 20px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    h1 {
-      color: var(--accent3);
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px rgba(255,212,0,.4);
-    }
-
-    .tag {
-      color: var(--accent);
-      font-size: 14px;
-      letter-spacing: 2px;
-      display: block;
-      margin-top: 10px;
-    }
-
-    h2 {
-      color: var(--accent);
-      font-size: 20px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin: 40px 0 20px;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
-    }
-
-    h3 {
-      color: var(--accent2);
-      font-size: 16px;
-      margin-top: 25px;
-      text-transform: uppercase;
-    }
-
-    p {
-      margin-bottom: 15px;
-      color: #c0d0e0;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-      color: #c0d0e0;
-    }
-
-    li { margin-bottom: 10px; }
-
-    .highlight { color: var(--accent3); font-weight: bold; }
-    .danger { color: var(--danger); font-weight: bold; }
-    .cyber-stat { color: var(--accent); font-weight: bold; }
-    .cyber-skill { color: var(--accent2); font-style: italic; }
-
-    .note-box {
-      background: rgba(0, 255, 225, 0.05);
-      border: 1px solid rgba(0, 255, 225, 0.3);
-      border-left: 4px solid var(--accent);
-      padding: 15px 20px;
-      margin: 25px 0;
-      border-radius: 2px;
-    }
-
-    .note-box h4 {
-      margin: 0 0 10px 0;
-      color: var(--accent);
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-      font-size: 14px;
-    }
-
-    th, td {
-      border: 1px solid rgba(0,255,225,.2);
-      padding: 12px 15px;
-      text-align: left;
-    }
-
-    th {
-      background: rgba(0,255,225,.1);
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    tr:nth-child(even) { background: rgba(0,0,0,0.2); }
-    
-    .footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--dim);
-      border-top: 1px solid rgba(0,255,225,.1);
-      padding-top: 20px;
-    }
-    
-    .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
+    body { background: radial-gradient(circle at 80% 0%,rgba(255,212,0,.05),transparent 40%), radial-gradient(circle at 20% 100%,rgba(0,255,225,.05),transparent 40%), var(--bg); color:var(--fg); font-family:var(--mono); margin:0; padding:40px 20px; line-height:1.6; }
+    .container { max-width:960px; margin:0 auto; background:var(--bg2); border:1px solid rgba(0,255,225,.2); padding:40px; border-radius:4px; box-shadow:0 0 20px rgba(0,255,225,.05); }
+    header { border-bottom:2px solid var(--accent3); padding-bottom:20px; margin-bottom:40px; text-align:center; }
+    h1 { color:var(--accent3); margin:0; font-size:28px; letter-spacing:4px; text-transform:uppercase; text-shadow:0 0 10px rgba(255,212,0,.4); }
+    .tag { color:var(--accent); font-size:13px; letter-spacing:2px; display:block; margin-top:10px; }
+    h2 { color:var(--accent); font-size:18px; letter-spacing:2px; text-transform:uppercase; margin:44px 0 18px; border-left:4px solid var(--accent); padding-left:12px; }
+    h3 { color:var(--accent2); font-size:14px; margin-top:24px; text-transform:uppercase; letter-spacing:1px; }
+    h4 { color:var(--accent3); font-size:13px; margin:14px 0 6px; text-transform:uppercase; }
+    p { margin-bottom:14px; color:#c0d0e0; font-size:14px; }
+    ul { list-style-type:square; padding-left:20px; color:#c0d0e0; font-size:14px; }
+    li { margin-bottom:8px; }
+    .highlight { color:var(--accent3); font-weight:bold; }
+    .danger { color:var(--danger); font-weight:bold; }
+    .cyber-stat { color:var(--accent); font-weight:bold; }
+    .cyber-skill { color:var(--accent2); font-style:italic; }
+    .note-box { background:rgba(0,255,225,.04); border:1px solid rgba(0,255,225,.3); border-left:4px solid var(--accent); padding:14px 18px; margin:22px 0; border-radius:2px; }
+    .note-box h4 { margin:0 0 10px 0; color:var(--accent); font-size:13px; text-transform:uppercase; }
+    .role-box { background:rgba(255,46,136,.04); border:1px solid rgba(255,46,136,.25); border-left:4px solid var(--accent2); padding:14px 18px; margin:22px 0; border-radius:2px; }
+    .role-box h4 { margin:0 0 10px 0; color:var(--accent2); font-size:13px; text-transform:uppercase; }
+    .warn-box { background:rgba(255,212,0,.04); border:1px solid rgba(255,212,0,.25); border-left:4px solid var(--accent3); padding:14px 18px; margin:22px 0; border-radius:2px; }
+    table { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+    th,td { border:1px solid rgba(0,255,225,.2); padding:10px 13px; text-align:left; }
+    th { background:rgba(0,255,225,.1); color:var(--accent); text-transform:uppercase; letter-spacing:1px; }
+    tr:nth-child(even) { background:rgba(0,0,0,.2); }
+    .formula { text-align:center; font-size:18px; margin:24px 0; padding:18px; border:1px dashed var(--accent3); color:var(--fg); background:rgba(0,0,0,.2); border-radius:2px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+    .skill-card { background:rgba(0,0,0,.2); border:1px solid rgba(0,255,225,.15); padding:12px 14px; border-radius:2px; font-size:13px; }
+    .skill-card .skill-name { color:var(--accent2); font-weight:bold; display:block; margin-bottom:4px; }
+    .skill-card .skill-stat { color:var(--accent); font-size:11px; display:block; margin-bottom:6px; }
+    .skill-card p { margin:0; font-size:13px; color:#a0b4c8; }
+    .footer { margin-top:50px; text-align:center; font-size:12px; color:var(--dim); border-top:1px solid rgba(0,255,225,.1); padding-top:20px; }
+    .badge { display:inline-block; background:rgba(0,255,225,.12); color:var(--accent); border:1px solid rgba(0,255,225,.3); font-size:11px; padding:2px 7px; border-radius:2px; margin-left:6px; vertical-align:middle; }
+    .badge-red { background:rgba(255,46,136,.12); color:var(--accent2); border-color:rgba(255,46,136,.3); }
+    .badge-yellow { background:rgba(255,212,0,.12); color:var(--accent3); border-color:rgba(255,212,0,.3); }
+    .small { font-size:12px; color:var(--dim); }
+    .rank-table { border:1px solid rgba(255,46,136,.2); }
+    .rank-table th { background:rgba(255,46,136,.1); color:var(--accent2); }
   </style>
 </head>
 <body>
+<div class="container">
+  <header>
+    <h1>DataTerm: Perícias & Habilidades</h1>
+    <span class="tag">// RESOLUÇÃO DE TESTES COMPLETA — CYBERPUNK RED //</span>
+  </header>
 
-  <div class="container">
-    <header>
-      <h1>DataTerm: Perícias & Habilidades</h1>
-      <span class="tag">// RESOLUÇÃO DE TESTES E USO DE PERÍCIAS - CYBERPUNK RED //</span>
-    </header>
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>1. A Mecânica Base — Regra de Ouro</h2>
+  <p>Sempre que seu personagem tentar algo cujo resultado seja incerto, você faz um <strong>Teste de Perícia</strong>. A fórmula é sempre a mesma:</p>
+  <div class="formula"><span class="cyber-stat">1d10</span> + <span class="cyber-stat">Atributo</span> + <span class="cyber-skill">Nível da Perícia</span> + <span class="highlight">Modificadores</span></div>
+  <p>Para ter sucesso, seu resultado total deve ser <strong>ESTRITAMENTE MAIOR</strong> que o DV ou a rolagem do oponente. <em>Empate = defensor vence (ou falha contra DV fixo).</em></p>
+  <p>Se você simplesmente <strong>não tem a perícia</strong>, use apenas o Atributo ligado a ela + 1d10. Nada mais.</p>
 
-    <h2>1. A Mecânica Base (A Regra de Ouro)</h2>
-    <p>Em Cyberpunk RED, sempre que você tentar realizar uma ação cujo resultado seja incerto, você faz um <strong>Teste de Perícia</strong>. A fórmula básica para qualquer teste é sempre a mesma:</p>
-    
-    <div style="text-align: center; font-size: 20px; margin: 30px 0; padding: 20px; border: 1px dashed var(--accent3); color: var(--fg);">
-      <span class="cyber-stat">1d10</span> + <span class="cyber-stat">Atributo</span> + <span class="cyber-skill">Nível da Perícia</span> + <span class="highlight">Modificadores</span>
-    </div>
-
-    <p>Para ser bem-sucedido, o seu resultado total deve ser <strong>ESTRITAMENTE MAIOR</strong> que o Valor de Dificuldade (DV) ou a rolagem do oponente. <em>Empates sempre vão para o Defensor (ou resultam em falha contra um DV fixo).</em></p>
-
-    <h2>2. A Regra do 10 e a Regra do 1 (Críticos)</h2>
-    <p>O dado de 10 faces (d10) em Cyberpunk pode "explodir" tanto para o bem quanto para o mal:</p>
-    <ul>
-      <li><span class="highlight">O 10 Explosivo (Acerto Crítico):</span> Se você rolar um 10 natural no seu primeiro d10, você <strong>rola mais 1d10 e soma</strong> ao resultado. Se rolar outro 10 no dado extra, você não rola novamente (limite de uma explosão).</li>
-      <li><span class="danger">A Falha Crítica (Erro Crítico):</span> Se você rolar um 1 natural no seu primeiro d10, você <strong>rola mais 1d10 e SUBTRAI</strong> do seu total (Atributo + Perícia). Isso pode resultar em totais negativos!</li>
-    </ul>
-
-    <h2>3. Quando usar: Tipos de Testes</h2>
-    
-    <div class="grid-2">
-      <div>
-        <h3>Testes contra DV (Dificuldade)</h3>
-        <p>Usado quando você está testando contra o ambiente, consertando algo, hackeando ou tentando se lembrar de uma informação. O Mestre define a dificuldade com base na tabela abaixo.</p>
-        <table>
-          <tr><th>Dificuldade</th><th>Valor (DV)</th></tr>
-          <tr><td>Simples</td><td>9</td></tr>
-          <tr><td>Cotidiano</td><td>13</td></tr>
-          <tr><td>Difícil</td><td>15</td></tr>
-          <tr><td>Profissional</td><td>17</td></tr>
-          <tr><td>Heroico</td><td>21</td></tr>
-          <tr><td>Lendário</td><td>29</td></tr>
-        </table>
-      </div>
-      
-      <div>
-        <h3>Testes Resistidos (Opostos)</h3>
-        <p>Usado quando dois personagens estão ativamente competindo um contra o outro. Por exemplo: <span class="cyber-skill">Furtividade</span> contra <span class="cyber-skill">Percepção</span>, ou <span class="cyber-skill">Evasão</span> contra um ataque de <span class="cyber-skill">Briga</span>.</p>
-        <p><strong>Fórmula:</strong> Atacante (1d10 + Atributo + Perícia) VS Defensor (1d10 + Atributo + Perícia).</p>
-        <p>O atacante precisa superar o resultado do defensor. Em caso de empate, quem iniciou a ação falha.</p>
-      </div>
-    </div>
-
-    <h2>4. Categorias de Perícias</h2>
-    <p>As perícias são divididas em categorias. Aqui estão os usos mais comuns para você saber quando rolá-las:</p>
-    
-    <ul>
-      <li><span class="highlight">Perícias de Atenção (INT/FVO):</span> 
-        <br>• <span class="cyber-skill">Percepção:</span> Encontrar pistas, ouvir passos, notar emboscadas.
-        <br>• <span class="cyber-skill">Concentração:</span> Manter o foco sob fogo cruzado, resistir a intimidação ou tortura mental.
-        <br>• <span class="cyber-skill">Ocultar/Revelar Objeto:</span> Esconder uma arma no casaco ou achar um chip contrabandeado num pneu.
-      </li>
-      
-      <li><span class="highlight">Perícias Corporais (DES/FVO):</span>
-        <br>• <span class="cyber-skill">Atletismo:</span> Pular entre telhados, nadar, escalar, arremessar granadas.
-        <br>• <span class="cyber-skill">Furtividade:</span> Mover-se em silêncio ou se esconder nas sombras.
-        <br>• <span class="cyber-skill">Resistência:</span> Ficar acordado por dias, aguentar venenos ou marchas forçadas.
-      </li>
-      
-      <li><span class="highlight">Perícias Sociais (EMP/COOL):</span>
-        <br>• <span class="cyber-skill">Persuasão:</span> Convencer alguém logicamente a fazer o que você quer.
-        <br>• <span class="cyber-skill">Malandragem / Lábia:</span> Mentir, enrolar ou enganar.
-        <br>• <span class="cyber-skill">Percepção Humana:</span> Ler a linguagem corporal para saber se alguém está mentindo ou nervoso.
-        <br>• <span class="cyber-skill">Interrogatório:</span> Extrair informações à força ou sob pressão.
-      </li>
-      
-      <li><span class="highlight">Perícias Técnicas (TEC):</span>
-        <br>• <span class="cyber-skill">Eletrônica / Seg. Básica:</span> Desarmar alarmes, hackear painéis simples, abrir portas magnéticas.
-        <br>• <span class="cyber-skill">Primeiros Socorros / Paramédico:</span> Estabilizar aliados moribundos ou realizar curativos rápidos.
-        <br>• <span class="cyber-skill">Cibertecnologia:</span> Identificar falhas em implantes cibernéticos ou repará-los.
-      </li>
-    </ul>
-
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>2. Sucesso e Falha Crítica (O Dado Explode)</h2>
+  <div class="grid-2">
     <div class="note-box">
-      <h4>Habilidades de Papel (Role Abilities)</h4>
-      <p>Lembre-se que além das perícias normais, cada Papel (Classe) possui uma <strong>Habilidade de Papel Única</strong> que não pode ser aprendida pelos outros. Por exemplo:</p>
-      <ul>
-        <li><strong>Netrunner (Interface):</strong> A única habilidade que permite se conectar à arquitetura de Rede, usar programas ICE e hackear nós de controle.</li>
-        <li><strong>Fixer (Operador):</strong> Usada para conseguir itens raros no mercado negro, fechar negócios impossíveis e gerenciar contatos.</li>
-        <li><strong>Medtech (Medicina):</strong> Permite fazer cirurgias complexas, instalar cibernética e administrar fármacos e estimulantes que curam além dos Primeiros Socorros normais.</li>
-      </ul>
-      <p>Essas habilidades geralmente têm regras próprias descritas na sua ficha e evoluem subindo de rank (1 a 10).</p>
+      <h4>10 Explosivo — Sucesso Crítico</h4>
+      <p>Rolou <strong>10 natural</strong> no d10? Role mais 1d10 e some ao resultado. Se tirar outro 10 no dado extra, <em>não</em> rola de novo (apenas uma explosão).</p>
     </div>
-
-    <h2>5. Modificadores e Condições Complementares</h2>
-    <p>O Mestre pode (e deve) aplicar modificadores na sua rolagem com base na situação. Se você tiver as ferramentas certas e bastante tempo, ganha bônus. Se estiver sob ataque, no escuro ou sem equipamento adequado, recebe penalidades.</p>
-    <ul>
-      <li><strong>Ação Demorada:</strong> Tomar tempo extra para fazer algo com calma (+1 ou +2 no teste).</li>
-      <li><strong>Trabalho em Equipe:</strong> Ter ajuda de um aliado qualificado adiciona bônus de Sinergia.</li>
-      <li><strong>Sem Ferramentas:</strong> Tentar consertar um carro sem um kit de mecânico pode impor -2 ou -4.</li>
-    </ul>
-
-    <div class="footer">
-      // GERADO PARA O SISTEMA NIGHT_CITY.RPG ASSISTANT // THE STREETS ALWAYS WIN //
+    <div class="role-box">
+      <h4>1 — Falha Crítica</h4>
+      <p>Rolou <strong>1 natural</strong> no d10? Role mais 1d10 e <em>subtraia</em> do total (Atributo + Perícia). Pode resultar em totais negativos! Outro 1 no dado extra não aprofunda a falha.</p>
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>3. Tipos de Testes</h2>
+  <div class="grid-2">
+    <div>
+      <h3>Testes contra DV (Dificuldade Fixa)</h3>
+      <p>Usado quando você age contra o ambiente, conserta algo, hackeia, escala ou tenta se lembrar de algo. O GM define o DV:</p>
+      <table>
+        <tr><th>Dificuldade</th><th>DV</th><th>Contexto</th></tr>
+        <tr><td>Simples</td><td>9</td><td>Qualquer um consegue, mas crianças têm dificuldade.</td></tr>
+        <tr><td>Cotidiano</td><td>13</td><td>A maioria sem treinamento especial consegue.</td></tr>
+        <tr><td>Difícil</td><td>15</td><td>Precisa de talento ou treinamento.</td></tr>
+        <tr><td>Profissional</td><td>17</td><td>Requer treinamento real e experiência.</td></tr>
+        <tr><td>Heroico</td><td>21</td><td>Só os melhores dos melhores.</td></tr>
+        <tr><td>Incrível</td><td>24</td><td>Façanha de nível olímpico.</td></tr>
+        <tr><td>Lendário</td><td>29</td><td>Algo sobre o qual se escreve história.</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Testes Resistidos (Opostos)</h3>
+      <p>Dois personagens competindo diretamente. Exemplos: <span class="cyber-skill">Furtividade vs. Percepção</span>, <span class="cyber-skill">Evasão vs. Briga</span>, <span class="cyber-skill">Persuasão vs. Concentração</span>.</p>
+      <div class="formula" style="font-size:13px;padding:10px 14px;">
+        Atacante: <span class="cyber-stat">Atrib. + Perícia + 1d10</span><br>
+        vs.<br>
+        Defensor: <span class="cyber-stat">Atrib. + Perícia + 1d10</span>
+      </div>
+      <p>O atacante precisa superar o resultado do defensor. <strong>Empate = falha para o atacante.</strong></p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>4. Modificadores de Situação</h2>
+  <div class="grid-2">
+    <div>
+      <h3>Modificadores Negativos</h3>
+      <table>
+        <tr><th>Condição</th><th>Mod.</th></tr>
+        <tr><td>Iluminação fraca / noturna</td><td>-1</td></tr>
+        <tr><td>Nunca fez isso antes</td><td>-1</td></tr>
+        <tr><td>Tarefa complexa</td><td>-2</td></tr>
+        <tr><td>Sem ferramentas ou componentes certos</td><td>-2</td></tr>
+        <tr><td>Dormiu mal na noite anterior</td><td>-2</td></tr>
+        <tr><td>Sob tensão extrema</td><td>-2</td></tr>
+        <tr><td>Exausto</td><td>-4</td></tr>
+        <tr><td>Extremamente bêbado ou sedado</td><td>-4</td></tr>
+        <tr><td>Tentando fazer em segredo</td><td>-4</td></tr>
+        <tr><td>Obscurecido por fumaça ou escuridão</td><td>-4</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Bônus e Regras Especiais</h3>
+      <ul>
+        <li><strong>Tempo Extra:</strong> Se tomar 4× mais tempo para completar uma tarefa, ganhe <span class="highlight">+1</span> no teste.</li>
+        <li><strong>Habilidade Complementar:</strong> Resultado bom em uma perícia pode dar <span class="highlight">+1</span> em uma perícia subsequente relacionada (a critério do GM). Não acumula.</li>
+        <li><strong>Trabalho em Equipe:</strong> Um aliado qualificado pode ajudar com bônus de Sinergia (a critério do GM).</li>
+        <li><strong>Sorte (LUCK):</strong> Antes de rolar, gaste pontos de LUCK para +1 por ponto. Reseta no início de cada sessão. Máximo = Atributo LUCK.</li>
+        <li><strong>Tentar de Novo:</strong> Só é permitido se suas chances melhoraram (ferramenta melhor, mais tempo, ajuda, etc.).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>5. Lista Completa de Perícias</h2>
+  <p>Cada perícia é ligada a um Atributo. A soma <strong>Atributo + Nível da Perícia</strong> é chamada de <em>Base de Habilidade</em>. Perícias marcadas <strong>(x2)</strong> custam o dobro para comprar e melhorar.</p>
+
+  <h3>Perícias de Consciência / Atenção</h3>
+  <div class="grid-3">
+    <div class="skill-card">
+      <span class="skill-name">Concentração</span>
+      <span class="skill-stat">Atrib: WILL</span>
+      <p>Foco mental, memória, controle fisiológico. Usado para resistir intimidação, manter cabeça fria em tiroteio e memorizar informações.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Percepção</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Detectar pistas, armadilhas, emboscadas e pessoas usando Furtividade. Não detecta objetos escondidos com Ocultar/Revelar.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Ocultar/Revelar Objetos</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Esconder armas sob a roupa ou encontrar objetos escondidos por outros. Usada na alfândega, no contrabando e por investigadores.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Leitura Labial</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Ler os lábios de alguém a distância. Em Base 14+, funciona com sotaques pesados e bocas parcialmente obscurecidas.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Rastrear</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Seguir trilhas por rastros e pistas. Usado por caçadores de recompensas e rastreadores. Em Base 14+, funciona contra alvos que ocultam rastros ativamente.</p>
+    </div>
+  </div>
+
+  <h3>Perícias Corporais / Físicas</h3>
+  <div class="grid-3">
+    <div class="skill-card">
+      <span class="skill-name">Atletismo</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Saltar, escalar, nadar, levantar pesos, correr longas distâncias, arremessar objetos e granadas. Cobre esportes e desafios físicos gerais.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Furtividade</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Mover em silêncio, se esconder nas sombras, agir discretamente. Testada contra a Percepção de observadores.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Resistência (Endurance)</span>
+      <span class="skill-stat">Atrib: WILL</span>
+      <p>Suportar condições severas: falta de sono, comida, água, marchas forçadas, dor prolongada e ambientes hostis.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Contorcionismo</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Escapar de algemas e amarras, se encaixar em espaços inacessíveis. Em Base 18, equivalente a artista de circo.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Dança</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Dançar em nível profissional. Em Base 14+, competição. Em Base 18, reconhecido nacional/corporativamente.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Resistir Tortura/Drogas</span>
+      <span class="skill-stat">Atrib: WILL</span>
+      <p>Resistir a interrogatórios, venenos e drogas. Testada ao ser envenenado (DV baseado na intensidade).</p>
+    </div>
+  </div>
+
+  <h3>Perícias de Combate</h3>
+  <div class="grid-3">
+    <div class="skill-card">
+      <span class="skill-name">Armas de uma Mão</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Pistolas, SMGs de uma mão. CDT 2 na maioria das pistolas.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Armas de Ombro</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Espingardas, Rifles de Assalto, Rifles Sniper, Lançadores.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Armas Brancas</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Facas, espadas, tacos, porretes. Ignoram metade do SP do defensor.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Briga</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Combate desarmado, agarramentos, estrangulamentos. Dano baseado no CORPO. Não ignora SP.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Armas Pesadas</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Lança-mísseis, metralhadoras pesadas, armas exóticas de grande calibre.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Disparo Automático</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Modo automático de SMGs e Rifles de Assalto. Usa tabela de DV própria. Dano = 2d6 × excedente do DV.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Evasão</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Esquivar de ataques corpo a corpo e ataques à distância (se REF 8+). Usada como defesa em combate.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Artes Marciais (x2)</span>
+      <span class="skill-stat">Atrib: DEX</span>
+      <p>Formas especializadas: Aikido, Karate, Judo, Taekwondo. Ignoram metade do SP. Movimentos Especiais exclusivos por forma.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Arquearia</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Arcos e Bestas. Flechas básicas são recuperáveis. Sem necessidade de Recarregar.</p>
+    </div>
+  </div>
+
+  <h3>Perícias Sociais</h3>
+  <div class="grid-3">
+    <div class="skill-card">
+      <span class="skill-name">Persuasão</span>
+      <span class="skill-stat">Atrib: COOL</span>
+      <p>Convencer logicamente alguém. Argumentação baseada em fatos e razão.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Malandragem / Lábia</span>
+      <span class="skill-stat">Atrib: COOL</span>
+      <p>Mentir, enrolar, enganar. Detectado por Percepção Humana de quem suspeita.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Percepção Humana</span>
+      <span class="skill-stat">Atrib: EMP</span>
+      <p>Ler linguagem corporal, detectar mentiras, nervosismo e intenções ocultas.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Interrogatório</span>
+      <span class="skill-stat">Atrib: COOL</span>
+      <p>Extrair informações sob pressão. Pode ser usada para intimidar ou com Persuasão como complementar.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Sedução</span>
+      <span class="skill-stat">Atrib: COOL</span>
+      <p>Usar atração física e charme para influenciar ou manipular pessoas.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Estilo de Rua</span>
+      <span class="skill-stat">Atrib: COOL</span>
+      <p>Conhecimento e postura na Rua. Saber como se portar, reconhecer hierarquias e sinais de gangues.</p>
+    </div>
+  </div>
+
+  <h3>Perícias Técnicas</h3>
+  <div class="grid-3">
+    <div class="skill-card">
+      <span class="skill-name">Eletrônica/Seg. Básica</span>
+      <span class="skill-stat">Atrib: TEC</span>
+      <p>Desarmar alarmes, hackear painéis simples, abrir portas magnéticas, instalar dispositivos básicos.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Primeiros Socorros</span>
+      <span class="skill-stat">Atrib: TEC</span>
+      <p>Estabilizar aliados (retirar do estado Mortalmente Ferido), curativos rápidos e tratamento básico.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Paramédico</span>
+      <span class="skill-stat">Atrib: TEC</span>
+      <p>Tratamento avançado além dos Primeiros Socorros. Pode tratar Lesões Críticas de nível moderado.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Cibertecnologia</span>
+      <span class="skill-stat">Atrib: TEC</span>
+      <p>Identificar falhas em implantes cibernéticos, reparar cyberware. Instalação exige Cirurgia (Medtech).</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Tec. de Armas</span>
+      <span class="skill-stat">Atrib: TEC</span>
+      <p>Reparar, modificar e fabricar armas. Usada por Techs para upgrades e fabricação.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Tecnologia Básica</span>
+      <span class="skill-stat">Atrib: TEC</span>
+      <p>Reparar, montar e entender equipamentos mecânicos e eletrônicos do dia a dia.</p>
+    </div>
+  </div>
+
+  <h3>Perícias de Controle de Veículos</h3>
+  <div class="grid-3">
+    <div class="skill-card">
+      <span class="skill-name">Dirigir Veículos Terrestres</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Condução, manobras e perseguições em carros e motos. Condução básica não exige rol se REF + Perícia > 9.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Pilotar Veículos Aéreos (x2)</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Pilotagem de AVs, helicópteros e gyrocópteros. Custo dobrado por complexidade.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Pilotar Veículos Marítimos</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Manobras em lanchas, jetskis e embarcações. Inclui combate naval e navegação em águas agitadas.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Equitação</span>
+      <span class="skill-stat">Atrib: REF</span>
+      <p>Montar animais treinados. Cavalos são raros no Tempo do Vermelho. Em Base 18, conecta-se com o animal.</p>
+    </div>
+  </div>
+
+  <h3>Perícias Educacionais / Conhecimento</h3>
+  <div class="grid-3">
+    <div class="skill-card">
+      <span class="skill-name">Criminologia</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Análise de cenas de crime, impressões digitais, balística, arquivos policiais. Útil para Lawmen e investigadores.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Burocracia</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Navegar e manipular estruturas burocráticas. Accelerar pedidos, bloquear oponentes, extrair info de órgãos.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Negócios</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Gestão empresarial, oferta e demanda, marketing. Evitar aquisições hostis e negociar com corporações.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Contabilidade</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Gerenciar e falsificar livros contábeis, detectar desfalques, contabilidade offshore.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Composição</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Escrever músicas, artigos ou histórias. Em Base 14+, pequeno mas apaixonado seguidor e aclamação crítica.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-name">Afinidade com Animais</span>
+      <span class="skill-stat">Atrib: INT</span>
+      <p>Treinar e cuidar de animais, incluindo sintéticos e clonados. Em Base 18, pode trabalhar profissionalmente.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <h2>6. Habilidades de Papel (Role Abilities)</h2>
+  <p>Cada Papel tem uma Habilidade Única que <strong>não pode</strong> ser aprendida por outros. Personagens iniciam no <strong>Rank 4</strong> (a menos que o GM permita diferente). Cada Rank representa um nível crescente de competência e acesso.</p>
+  <p>Para mudar de Papel, você precisa de pelo menos <strong>Rank 4 no Papel anterior</strong> e deve comprar o novo no Rank 1 com Pontos de Melhoria. Você não pode ter mais de 2 Papéis ativos, e só pode trocar novamente quando o segundo Papel atingir Rank 4.</p>
+
+  <div class="role-box">
+    <h4>🎸 Rockerboy — Impacto Carismático</h4>
+    <p>Influencia pessoas por força de personalidade, arte, música, dança ou presença física. Só funciona em <strong>Fãs</strong> (o GM determina quem é fã). Para <em>converter</em> alguém em fã: Impacto Carismático + 1d10 vs. DV8 (1 pessoa), DV10 (grupo ≤6), DV12 (grande grupo).</p>
+    <table class="rank-table">
+      <tr><th>Rank</th><th>Locais</th><th>1 Fã (DV8)</th><th>Grupo ≤6 (DV10)</th><th>Grande Grupo (DV12)</th></tr>
+      <tr><td>1–2</td><td>Pequenos clubes locais</td><td>Pequeno favor (bebida, carona)</td><td>Autógrafos, abordagens nas ruas</td><td>Sem grande grupo ainda</td></tr>
+      <tr><td>3–4</td><td>Clubes bem conhecidos</td><td>Grande favor (cama, indicações)</td><td>Sair regularmente, fornecer favores</td><td>Compram gravações e mercadorias</td></tr>
+      <tr><td>5–6</td><td>Clubes grandes e importantes</td><td>Cometer crime menor (furto, briga)</td><td>Atuar como grupo pessoal</td><td>Fãs em cidades próximas, leais</td></tr>
+      <tr><td>7–8</td><td>Pequenas salas de concerto, vídeo local</td><td>Disposto a arriscar a vida</td><td>Cometer crime menor</td><td>Lutam por você, redes de fãs</td></tr>
+      <tr><td>9</td><td>Grandes salas, transmissão nacional</td><td>Crime grave (roubo, agressão)</td><td>Crime grave por grupo</td><td>Quase lavagem cerebral — revoltas, destruição</td></tr>
+      <tr><td>10</td><td>Estádio, transmissão internacional</td><td>Sacrifício sem questionar</td><td>Proteção pessoal, arriscam a vida</td><td>Exército privado baseado no carisma</td></tr>
+    </table>
+  </div>
+
+  <div class="role-box">
+    <h4>🔫 Solo — Consciência de Combate</h4>
+    <p>No início do combate (antes da iniciativa), ou a qualquer momento com uma Ação, o Solo distribui os pontos totais do Rank entre os bônus abaixo. As distribuições anteriores persistem até serem alteradas.</p>
+    <table class="rank-table">
+      <tr><th>Habilidade</th><th>Pontos</th><th>Efeito</th></tr>
+      <tr><td>Deflexão de Dano</td><td>2/4/6/8/10</td><td>Reduz o 1º dano da rodada em 1/2/3/4/5</td></tr>
+      <tr><td>Reação de Iniciativa</td><td>1 por ponto</td><td>+1 por ponto nas rolagens de Iniciativa</td></tr>
+      <tr><td>Ataque de Precisão</td><td>3/6/9</td><td>+1/+2/+3 em todos os ataques feitos</td></tr>
+      <tr><td>Ponto Fraco</td><td>1 por ponto</td><td>+1 por ponto no dano (antes da armadura) do 1º ataque bem-sucedido da rodada</td></tr>
+      <tr><td>Detecção de Ameaça</td><td>1 por ponto</td><td>+1 por ponto em todos os testes de Percepção</td></tr>
+      <tr><td>Recuperação de Falhas</td><td>4</td><td>Ignora Falhas Críticas (1 natural) ao atacar (ainda conta como 1)</td></tr>
+    </table>
+  </div>
+
+  <div class="role-box">
+    <h4>💻 Netrunner — Interface</h4>
+    <p>Permite acessar Arquiteturas de Rede, usar programas ICE e hackear nós de controle. O Rank de Interface define quantas <strong>Ações NET por turno</strong> o Netrunner pode fazer.</p>
+    <table class="rank-table">
+      <tr><th>Rank de Interface</th><th>1–3</th><th>4–6</th><th>7–9</th><th>10</th></tr>
+      <tr><td>Ações NET por Turno</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+    </table>
+    <p>Habilidades de Interface disponíveis:</p>
+    <table class="rank-table">
+      <tr><th>Habilidade</th><th>Função</th></tr>
+      <tr><td>Backdoor</td><td>Quebra senhas e obstruções na Arquitetura.</td></tr>
+      <tr><td>Cloak</td><td>Oculta ações na Arquitetura antes de sair.</td></tr>
+      <tr><td>Control</td><td>Controla sistemas conectados à Arquitetura.</td></tr>
+      <tr><td>Eye-Dee</td><td>Identifica dados encontrados e seu valor.</td></tr>
+      <tr><td>Pathfinder</td><td>Conhece o mapa interno da Arquitetura.</td></tr>
+      <tr><td>Scanner</td><td>Localiza sistemas em uma área.</td></tr>
+      <tr><td>Slide</td><td>Escapa de um Black ICE que está te seguindo.</td></tr>
+      <tr><td>Virus</td><td>Deixa um vírus personalizado no núcleo da Arquitetura.</td></tr>
+      <tr><td>Zap</td><td>Ataque básico contra Programas e outros Netrunners.</td></tr>
+    </table>
+  </div>
+
+  <div class="role-box">
+    <h4>🔧 Tech — Artífice</h4>
+    <p>A cada Rank de Artífice, o Tech ganha 1 Rank em duas Especialidades à sua escolha:</p>
+    <ul>
+      <li><strong>Especialização de Campo:</strong> Bônus do Rank se soma a qualquer teste de Tecnologia fora do Artífice. Além disso, pode fazer um <em>Reparo Temporário</em> como Ação (mesmo DV de reparo normal) que dura 10 min × Rank — depois o item retorna ao estado anterior.</li>
+      <li><strong>Especialização de Upgrade:</strong> Melhora um item existente (aumentar SP, tornar arma ocultável, adicionar slots, reduzir tempo de reparo, etc.). Um item recebe no máximo 1 upgrade desta especialidade.</li>
+      <li><strong>Especialista em Fabricação:</strong> Fabrica itens usando materiais de categoria inferior. Tempo e DV baseados na categoria de preço do item.</li>
+      <li><strong>Especialização em Invenções:</strong> Inventa novos itens ou upgrades. O GM define as regras do item e sua categoria de preço (mínimo: Caro).</li>
+    </ul>
+    <table class="rank-table">
+      <tr><th>Custo do Item</th><th>DV</th><th>Tempo</th></tr>
+      <tr><td>Barato/Cotidiano</td><td>9</td><td>1 hora</td></tr>
+      <tr><td>Oneroso</td><td>13</td><td>6 horas</td></tr>
+      <tr><td>Premium</td><td>17</td><td>1 dia</td></tr>
+      <tr><td>Caro</td><td>21</td><td>1 semana</td></tr>
+      <tr><td>Muito Caro</td><td>24</td><td>2 semanas</td></tr>
+      <tr><td>Luxuoso</td><td>29</td><td>1 mês</td></tr>
+    </table>
+  </div>
+
+  <div class="role-box">
+    <h4>💊 Medtech — Medicina</h4>
+    <p>A cada Rank de Medicina, o Medtech aloca 1 ponto em uma das três especialidades:</p>
+    <ul>
+      <li><strong>Cirurgia:</strong> +2 pontos na Habilidade Cirurgia a cada ponto alocado (máx. 10). Usada para tratar Lesões Críticas graves, instalar e remover Cyberware, Escultura Corporal e Terapia. Exclusiva de Medtechs.</li>
+      <li><strong>Tecnologia Médica (Fármacos):</strong> +1 ponto na Habilidade Tecnologia Médica (máx. 5 pontos nesta especialidade). Permite sintetizar medicamentos especiais. Cada ponto dá acesso a 1 fármaco adicional. Síntese: teste DV13, 200eb de materiais por hora × Habilidade Tec. Médica em doses.</li>
+      <li><strong>Operação de Cryosistemas:</strong> +1 ponto na Habilidade Tecnologia Médica. Opera sistemas de criopreservação para manter pacientes críticos.</li>
+    </ul>
+    <table class="rank-table">
+      <tr><th>Fármaco</th><th>Efeito</th></tr>
+      <tr><td>Antibiótico</td><td>Alvo já em cura natural cura +2 HP por dia durante 1 semana. 1 dose por vez.</td></tr>
+      <tr><td>Rapidetox</td><td>Remove imediatamente o efeito de qualquer droga, veneno ou intoxicante.</td></tr>
+      <tr><td>Speedheal</td><td>Alvo fora do estado Mortalmente Ferido cura imediatamente CORPO + WILL em HP. 1 dose por vez.</td></tr>
+    </table>
+  </div>
+
+  <div class="warn-box">
+    <h4>Outros Papéis no Cyberpunk RED</h4>
+    <p>Além dos detalhados acima, existem outros Papéis no livro, cada um com sua Habilidade única:</p>
+    <ul>
+      <li><strong>Media — Credibilidade:</strong> Controla o nível de cobertura midiática e confiança pública. Pode expor corruptos, proteger aliados e destruir reputações corporativas.</li>
+      <li><strong>Exec — Equipe Corporativa:</strong> Gerencia recursos e pessoas dentro de uma corporação. Pode chamar equipes, recursos e suporte corporativo proporcional ao Rank.</li>
+      <li><strong>Lawman — Apoio da Divisão:</strong> Chama reforços e recursos de sua divisão policial ou força de lei proporcional ao Rank.</li>
+      <li><strong>Fixer — Operador:</strong> Gerencia contatos, negocia e facilita o acesso a itens e serviços raros. Em Base 14+, pode fechar negócios impossíveis e gerenciar contatos no submundo.</li>
+      <li><strong>Nômade — Moto:</strong> Utiliza e mantém veículos (motos, caminhões, etc.). Constrói rede de contatos na família Nômade e pode realizar upgrades em veículos.</li>
+    </ul>
+  </div>
+
+  <div class="note-box">
+    <h4>Multiclasse de Papéis</h4>
+    <p>Para assumir um segundo Papel, você precisa ter o Papel atual em pelo menos <strong>Rank 4</strong>. Compre o novo Papel no Rank 1 com Pontos de Melhoria. A Rua enxergará você pelo novo Papel. Para trocar para um <em>terceiro</em> Papel, o segundo deve atingir Rank 4. Você retém todas as características do Papel anterior e pode continuar aumentando seu Rank.</p>
+  </div>
+
+  <div class="footer">// GERADO PARA O SISTEMA NIGHT_CITY.RPG ASSISTANT // THE STREETS ALWAYS WIN //</div>
+</div>
 </body>
 </html>

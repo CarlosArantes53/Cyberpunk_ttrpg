@@ -119,7 +119,9 @@ def regras_combate():
 def regras_habilidades():
     return render_template("Regras_Habilidades_Cyberpunk.html")
 
-
+@app.route("/regras-netrunner")
+def regras_netrunner():
+    return render_template("Regras_Netrunner_Cyberpunk.html")
 # =============================================================================
 # AGENTE 1 — Mestre
 # =============================================================================
