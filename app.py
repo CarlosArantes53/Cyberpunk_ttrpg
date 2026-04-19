@@ -111,6 +111,13 @@ def transcribe():
 @app.route("/")
 def index():
     return render_template("index.html")
+@app.route("/regras-combate")
+def regras_combate():
+    return render_template("Regras_Combate_Cyberpunk.html")
+
+@app.route("/regras-habilidades")
+def regras_habilidades():
+    return render_template("Regras_Habilidades_Cyberpunk.html")
 
 
 # =============================================================================
