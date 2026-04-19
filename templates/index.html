@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIGHT CITY // RPG ASSISTANT</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+<header>
+  <h1>▌ NIGHT_CITY.RPG</h1>
+  <span class="tag">// CYBERPUNK ASSISTANT v1.0</span>
+  <div class="tts-controls">
+    <label class="tts-toggle" title="Ativar/desativar síntese de voz">
+      <input type="checkbox" id="tts-enabled" checked />
+      <span>🔊 VOZ</span>
+    </label>
+    <select id="tts-voice" class="tts-select">
+      <option value="pf_dora">pf_dora ♀</option>
+      <option value="pm_alex">pm_alex ♂</option>
+    </select>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-panel="mestre">◉ Mestre</button>
+  <button class="tab" data-panel="anotador">◉ Anotador</button>
+  <button class="tab" data-panel="netrunner">◉ Netrunner</button>
+</div>
+
+<main>
+
+  <!-- MESTRE -->
+  <section class="panel active" id="panel-mestre">
+    <h2>// Juiz de Regras</h2>
+    <p class="status">Carregue o PDF das regras e faca perguntas sobre mecanicas.</p>
+
+    <div class="row">
+      <input type="file" id="pdf-input" accept="application/pdf" />
+      <button class="cta" onclick="uploadPDF()">Carregar Regras</button>
+      <span id="pdf-status" class="status"></span>
+    </div>
+
+    <div class="input-wrapper">
+      <textarea id="pergunta-mestre" rows="3"
+        placeholder="Como funciona o teste de Interface num netrun?"></textarea>
+      <button class="mic-btn" title="Gravar voz" onclick="toggleMic('pergunta-mestre', this)">🎙</button>
+    </div>
+    <div class="row">
+      <button class="cta" onclick="perguntarMestre()">Consultar Regras</button>
+    </div>
+    <div class="log" id="log-mestre">[aguardando consulta]</div>
+  </section>
+
+  <!-- ANOTADOR -->
+  <section class="panel" id="panel-anotador">
+    <h2>// Escriba Digital</h2>
+    <p class="status">Descreva o que os jogadores fizeram. O sistema extrai itens, locais, NPCs e eventos em JSON.</p>
+
+    <div class="input-wrapper">
+      <textarea id="desc-anotador" rows="4"
+        placeholder="O grupo entrou no bar Afterlife e encontrou o fixer Rogue..."></textarea>
+      <button class="mic-btn" title="Gravar voz" onclick="toggleMic('desc-anotador', this)">🎙</button>
+    </div>
+    <div class="row">
+      <button class="cta" onclick="anotar()">Extrair & Salvar</button>
+      <button class="cta danger" onclick="limparMemoria()">Zerar Memoria</button>
+      <button class="cta pink" onclick="carregarMemoria()">Atualizar Lista</button>
+    </div>
+    <div class="log" id="log-anotador">[nenhuma anotacao enviada]</div>
+
+    <div id="memoria-display"></div>
+  </section>
+
+  <!-- NETRUNNER -->
+  <section class="panel" id="panel-netrunner">
+    <h2>// ICE-9 // Netrunner-IA</h2>
+    <p class="status">Descreva a situacao e deixe a IA jogar como netrunner da equipe. Ela consulta a memoria da campanha.</p>
+
+    <div class="chat" id="chat-netrunner">
+      <div class="msg model"><span class="who">ICE-9</span>> Conexao estabelecida. Aguardando briefing.</div>
+    </div>
+
+    <div class="input-wrapper">
+      <textarea id="msg-netrunner" rows="2"
+        placeholder="Mestre descreve: voce chegou na porta do servidor da Arasaka..."></textarea>
+      <button class="mic-btn" title="Gravar voz" onclick="toggleMic('msg-netrunner', this)">🎙</button>
+    </div>
+    <div class="row">
+      <button class="cta pink" onclick="falarNetrunner()">Transmitir</button>
+      <button class="cta" onclick="limparChat()">Reset Sessao</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
