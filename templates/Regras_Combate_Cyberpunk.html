@@ -159,62 +159,77 @@
     <p>O combate em Cyberpunk é rápido e letal. Quando os tiros começam a voar, o tempo é dividido em <strong>Rodadas</strong> (que representam cerca de 3 segundos no jogo). Cada personagem age no seu próprio Turno dentro dessa rodada.</p>
     <ul>
       <li><strong>Rolagem de Iniciativa:</strong> No início do combate, todos rolam <span class="cyber-stat">1d10 + REF (Reflexos)</span>.</li>
-      <li>A ordem de ação é decrescente (do maior resultado para o menor).</li>
-      <li>A iniciativa não é rolada novamente a cada rodada; a ordem é mantida até o fim do combate.</li>
+      <li><strong>Modificadores:</strong> Cibernéticos e drogas alteram este valor. O <em>Kerenzikov</em> adiciona +2 permanentemente à rolagem e o <em>Sandevistan</em> adiciona +3 ao ser ativado. Armaduras pesadas podem aplicar penalidades.</li>
+      <li>A ordem de ação é decrescente e mantida até o fim do combate.</li>
     </ul>
 
     <h2>2. Economia de Ações no Turno</h2>
     <p>No seu turno, cada personagem tem direito a realizar <strong>uma (1) Ação de Movimento</strong> e <strong>uma (1) Ação Principal</strong>.</p>
     
-    <h3>Ação de Movimento</h3>
-    <p>Você pode se mover um número de "quadrados" (2 metros cada) igual ao seu atributo <span class="cyber-stat">MOV (Movimento)</span>. O movimento pode ser dividido antes e depois da sua Ação Principal.</p>
+    <h3>Ação de Movimento e Fracionamento</h3>
+    <p>Você pode se mover até o dobro do seu <span class="cyber-stat">MOV</span> em metros (ex: MOV 5 = 10m) ou equivalente a quadrados. Movimentos como escalar ou pular custam o dobro do deslocamento. Você pode <strong>fracionar</strong> o seu movimento: andar um pouco, atacar, e usar o resto do movimento para voltar a uma cobertura.</p>
 
     <h3>Ação Principal</h3>
-    <p>Existem várias opções para gastar sua Ação Principal:</p>
+    <p>Opções para gastar sua Ação Principal incluem (mas não se limitam a):</p>
     <ul>
-      <li><strong>Atacar:</strong> Fazer um ataque à distância ou corpo-a-corpo.</li>
-      <li><strong>Correr:</strong> Abdicar da ação normal para ganhar uma Ação de Movimento extra (andar mais <span class="cyber-stat">MOV</span> metros).</li>
-      <li><strong>Agarrar/Sufocar/Arremessar:</strong> Ações de combate físico para controlar oponentes.</li>
-      <li><strong>Recarregar:</strong> Trocar o pente de munição da sua arma.</li>
-      <li><strong>Usar Habilidade/Item:</strong> Usar Primeiros Socorros, hackear uma porta, usar uma droga de combate, etc.</li>
+      <li><strong>Atacar:</strong> Fazer um ataque à distância ou corpo-a-corpo. Caso a arma tenha CDT (Cadência de Tiro) igual a 2 (ex: Pistolas), você pode atacar duas vezes dividindo as ações pelo movimento!</li>
+      <li><strong>Adiar / Preparar Ação:</strong> Escolha um "gatilho" narrativo para agir fora do seu turno (ex: <em>"Vou esperar ele sair da cobertura e atiro"</em>). Garante que você acerte alvos que fogem do campo de visão.</li>
+      <li><strong>Estabilizar:</strong> Fazer um teste de Primeiros Socorros para tirar um aliado do estado Mortalmente Ferido (Death Saves).</li>
+      <li><strong>Correr:</strong> Abdicar da ação principal para ganhar uma Ação de Movimento extra.</li>
+      <li><strong>Agarrar/Sufocar:</strong> Um teste resistido de Briga. Se bem sucedido, os dois recebem -2 em ações, e com mais uma ação, você pode usar o alvo agarrado como <strong>Escudo Humano</strong>.</li>
+      <li><strong>Ações Técnicas:</strong> Recarregar armas, Usar Objeto, Hackear Redes, Equipar Escudo.</li>
     </ul>
 
-    <h2>3. Resolução de Ataques</h2>
+    <h2>3. Resolução de Ataques e Modos de Disparo</h2>
 
-    <h3>Ataques à Distância (Armas de Fogo, Arcos, etc.)</h3>
-    <p>Para atirar em um alvo, role: <span class="cyber-stat">1d10 + REF + Perícia da Arma (ex: Fuzil, Armas Curtas)</span>.</p>
+    <h3>Ataques à Distância Básicos</h3>
+    <p>Role: <span class="cyber-stat">1d10 + Base da Perícia (Atributo + Nível de Perícia)</span>.</p>
     <ul>
-      <li><strong>Contra DV de Distância:</strong> Normalmente, o defensor não esquiva de tiros. O atacante deve superar um Valor de Dificuldade (DV) fixo baseado na distância e no tipo de arma (ex: escopetas são mortais de perto com DV baixo, mas difíceis de acertar de longe).</li>
-      <li><strong>Esquivando de Balas:</strong> Se o alvo possuir Reflexos (<span class="cyber-stat">REF</span>) 8 ou maior, ele possui velocidade suficiente para desviar ativamente de tiros. Nesse caso, em vez de atirar contra a tabela de DV, o atacante rola contra a esquiva do defensor: <span class="cyber-stat">1d10 + DES + Evasão</span>. O atacante deve superar o valor (empate beneficia o defensor).</li>
+      <li><strong>Contra DV de Distância:</strong> O atacante deve superar o Valor de Dificuldade (VD) fixo baseado na distância (em metros) e no tipo de arma do livro.</li>
+      <li><strong>Esquivando de Balas:</strong> Se o alvo possuir Reflexos (<span class="cyber-stat">REF</span>) 8 ou maior, ele desvia ativamente. O DV se torna o resultado do defensor rodando: <span class="cyber-stat">1d10 + DES + Evasão</span>.</li>
     </ul>
 
-    <h3>Ataques Corpo-a-Corpo (Briga, Armas Brancas, Artes Marciais)</h3>
-    <p>Para atacar no corpo-a-corpo, role: <span class="cyber-stat">1d10 + DES + Perícia Relevante (Briga, Armas Brancas ou Artes Marciais)</span>.</p>
+    <h3>Disparo Concentrado (Aimed Shot)</h3>
+    <p>Declare <strong>antes</strong> de rolar. Aplica-se um <strong>redutor de -8 no seu teste</strong> (o VD aumenta em 8), mas com efeitos devastadores:</p>
     <ul>
-      <li>Diferente do combate à distância, o defensor <strong>sempre</strong> tenta se esquivar ativamente rolando: <span class="cyber-stat">1d10 + DES + Evasão</span>.</li>
-      <li>O valor de ataque deve ser ESTRITAMENTE MAIOR que o valor de defesa para acertar.</li>
+      <li><strong>Na Cabeça:</strong> Todo o dano que passar pela armadura é multiplicado por 2.</li>
+      <li><strong>Na Perna:</strong> Causa diretamente a Lesão Crítica de Perna Quebrada.</li>
+      <li><strong>Em Objeto/Arma:</strong> O alvo derruba o que estiver segurando.</li>
     </ul>
 
-    <h2>4. Dano, Armadura e Ablação</h2>
-    <p>Se o ataque for bem-sucedido, o atacante rola os dados de dano da arma correspondente (ex: Pistola Pesada rola 3d6).</p>
+    <div class="note-box">
+      <h4>Modos de Disparo Alternativos</h4>
+      <ul>
+        <li><strong>Fogo Automático:</strong> Gasta 1 ação e 10 balas. Rola-se contra a VD de fogo automático. O dano é violento: role 2d6 e <strong>multiplique</strong> o valor pelo número que excedeu a VD (limite x3 para SMG, x4 Fuzil).</li>
+        <li><strong>Supressão:</strong> Gasta 10 balas. Força inimigos na área a rolarem um teste de Concentração. Quem falhar é forçado a usar movimento na próxima rodada para se esconder sob cobertura.</li>
+        <li><strong>Escopetas (Cápsula Expansiva):</strong> Atinge todos em uma área de cone (até 6m/3 quadrados) dando o mesmo dano (3d6).</li>
+        <li><strong>Explosivos (Granadas/Foguetes):</strong> Explode em área de 5x5 quadrados (10m). Causa dano completo a personagens e destrói partes do cenário!</li>
+      </ul>
+    </div>
+
+    <h2>4. Dano, Armadura e Coberturas</h2>
     
+    <h3>Ablação e Poder de Parada (PP)</h3>
+    <p>As armaduras têm Poder de Parada (PP). Subtraia o PP do dano total. Se o dano superar o PP, o ataque machuca os PV do alvo E a armadura sofre <strong>Ablação</strong> (seu PP é reduzido permanentemente em 1 ponto).</p>
+    
+    <h3>Cobertura (Cover)</h3>
+    <p><strong>Não existe cobertura parcial.</strong> Ou seu corpo inteiro está escondido, ou você está na linha de tiro.</p>
     <ul>
-      <li><strong>Poder de Parada (PB):</strong> As armaduras possuem um valor de PB (Poder de Parada). Subtraia o PB da armadura equipada do dano total rolado.</li>
-      <li><strong>Perdendo Pontos de Vida:</strong> Se o dano restante for maior que zero, ele é subtraído diretamente dos Pontos de Vida (PV) do alvo. Se o dano não superar a armadura, nenhum dano é causado aos PV (a bala não penetrou).</li>
-      <li><strong>Ablação da Armadura:</strong> Se o dano do ataque penetrar a armadura (Dano Total > PB), a armadura sofre <em>ablação</em>. O valor de PB dessa armadura diminui permanentemente em 1 ponto, tornando-a mais fraca para os próximos ataques.</li>
+      <li>Coberturas têm Pontos de Vida (ex: um balcão grosso de bar tem 20 PV).</li>
+      <li>Se atirarem na cobertura e quebrarem os PV dela, <strong>o dano excedente daquele ataque se perde e NÃO atinge você</strong>.</li>
+      <li><em>Exceção:</em> Se um Explosivo quebrar a cobertura, você recebe o dano do explosivo integralmente.</li>
     </ul>
 
     <div class="note-box">
       <h4>Acertos Críticos e Desmembramento</h4>
-      <p>Sempre que você rolar o dano de um ataque e <strong>dois (2) ou mais dados rolarem o número "6"</strong>, ocorre uma Lesão Crítica!</p>
+      <p>Se você rolar o dano de um ataque e <strong>dois (2) ou mais dados rolarem o número "6"</strong>, ocorre uma Lesão Crítica!</p>
       <ul>
-        <li>O alvo sofre <strong>+5 de Dano Adicional DIRETAMENTE nos seus PV</strong> (ignorando totalmente o PB da armadura).</li>
-        <li>O Mestre rola na tabela de <em>Lesões Críticas</em> (2d6), causando efeitos devastadores variados (como Braço Quebrado, Concussão Cerebral, etc.).</li>
+        <li>O alvo sofre <strong>+5 de Dano Adicional DIRETAMENTE nos seus PV</strong> (ignorando totalmente o PP da armadura).</li>
+        <li>O Mestre rola na tabela de Lesões Críticas (2d6), causando efeitos variados.</li>
       </ul>
     </div>
 
-    <h2>5. Saúde, Ferimentos Graves e Morte</h2>
-    <p>Os personagens possuem uma quantidade máxima de Pontos de Vida (PV) determinada pelo seu físico e vontade. Conforme perdem PV, entram em estados progressivos de ferimento:</p>
+    <h2>5. Saúde e Estado Mortalmente Ferido</h2>
 
     <table>
       <tr>
@@ -230,21 +245,21 @@
       <tr>
         <td>Gravemente Ferido</td>
         <td>PV abaixo da Metade até 1.</td>
-        <td><span class="danger">-2 PARA TODAS AS AÇÕES</span> quando estiver Gravemente Ferido.</td>
+        <td><span class="danger">-2 PARA TODAS AS AÇÕES</span> e atributos.</td>
       </tr>
       <tr>
         <td>Mortalmente Ferido</td>
         <td>PV chega a exatos 0 (PV não fica negativo).</td>
-        <td><span class="danger">-4 em Todas as Ações</span>, MOV reduzido para no máximo 2, e deve começar a fazer <strong>Testes de Resistência à Morte</strong> todo turno.</td>
+        <td><span class="danger">-4 em Todas as Ações</span>, <strong>MOV reduzido em 6 (mínimo de 1 quadrado)</strong>, e Testes de Morte por rodada!</td>
       </tr>
     </table>
 
     <h3>Resistência à Morte (Death Saves)</h3>
-    <p>Quando chegar a 0 PV no início do seu turno, você deve fazer uma Resistência à Morte para não expirar no chão.</p>
+    <p>Quando chegar a 0 PV no início do seu turno, você deve fazer uma Resistência à Morte.</p>
     <ul>
-      <li>Role <span class="cyber-stat">1d10</span>. O valor deve ser <strong>abaixo</strong> do seu Atributo Base de Resistência/Físico (FVO - Força de Vontade + Corpo).</li>
-      <li>Se você rolar um 10, você morre automaticamente.</li>
-      <li>A cada turno que você passa Mortalmente Ferido, você acumula um penalizador de +1 na dificuldade desse teste. Você morre em pouco tempo se um Medtech não tentar te estabilizar rolando a perícia Primeiros Socorros ou Paramédico.</li>
+      <li>Role <span class="cyber-stat">1d10</span>. O valor deve ser ESTRITAMENTE ABAIXO do seu Atributo Base de CORPO. (Ex: Corpo 7, tem que rolar 6 ou menos). Se tirar 10 natural, você morre.</li>
+      <li><strong>Agravamento:</strong> A cada rodada passada mortalmente ferido, a penalidade aumenta em 1 (fica 1 ponto mais difícil passar).</li>
+      <li><strong>Tomando Dano no Chão:</strong> Se o personagem for atacado mortalmente ferido, a dificuldade do teste de morte piora MAIS AINDA, e ele recebe uma nova lesão crítica automaticamente. Estabilize logo seus amigos ou chame um corpo falso!</li>
     </ul>
 
     <div class="footer">
