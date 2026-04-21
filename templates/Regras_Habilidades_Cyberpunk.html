@@ -1,58 +1,51 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regras de Perícias e Habilidades - Cyberpunk RED</title>
-  <style>
-    :root {
+<style>
+.container-regras {
       --bg: #0a0e14; --bg2: #10161f; --fg: #e6f1ff; --dim: #6a7891;
       --accent: #00ffe1; --accent2: #ff2e88; --accent3: #ffd400;
       --danger: #ff4d4d; --mono: "JetBrains Mono","Fira Code",Consolas,monospace;
     }
-    * { box-sizing: border-box; }
-    body { background: radial-gradient(circle at 80% 0%,rgba(255,212,0,.05),transparent 40%), radial-gradient(circle at 20% 100%,rgba(0,255,225,.05),transparent 40%), var(--bg); color:var(--fg); font-family:var(--mono); margin:0; padding:40px 20px; line-height:1.6; }
-    .container { max-width:960px; margin:0 auto; background:var(--bg2); border:1px solid rgba(0,255,225,.2); padding:40px; border-radius:4px; box-shadow:0 0 20px rgba(0,255,225,.05); }
-    header { border-bottom:2px solid var(--accent3); padding-bottom:20px; margin-bottom:40px; text-align:center; }
-    h1 { color:var(--accent3); margin:0; font-size:28px; letter-spacing:4px; text-transform:uppercase; text-shadow:0 0 10px rgba(255,212,0,.4); }
-    .tag { color:var(--accent); font-size:13px; letter-spacing:2px; display:block; margin-top:10px; }
-    h2 { color:var(--accent); font-size:18px; letter-spacing:2px; text-transform:uppercase; margin:44px 0 18px; border-left:4px solid var(--accent); padding-left:12px; }
-    h3 { color:var(--accent2); font-size:14px; margin-top:24px; text-transform:uppercase; letter-spacing:1px; }
-    h4 { color:var(--accent3); font-size:13px; margin:14px 0 6px; text-transform:uppercase; }
-    p { margin-bottom:14px; color:#c0d0e0; font-size:14px; }
-    ul { list-style-type:square; padding-left:20px; color:#c0d0e0; font-size:14px; }
-    li { margin-bottom:8px; }
-    .highlight { color:var(--accent3); font-weight:bold; }
-    .danger { color:var(--danger); font-weight:bold; }
-    .cyber-stat { color:var(--accent); font-weight:bold; }
-    .cyber-skill { color:var(--accent2); font-style:italic; }
-    .note-box { background:rgba(0,255,225,.04); border:1px solid rgba(0,255,225,.3); border-left:4px solid var(--accent); padding:14px 18px; margin:22px 0; border-radius:2px; }
-    .note-box h4 { margin:0 0 10px 0; color:var(--accent); font-size:13px; text-transform:uppercase; }
-    .role-box { background:rgba(255,46,136,.04); border:1px solid rgba(255,46,136,.25); border-left:4px solid var(--accent2); padding:14px 18px; margin:22px 0; border-radius:2px; }
-    .role-box h4 { margin:0 0 10px 0; color:var(--accent2); font-size:13px; text-transform:uppercase; }
-    .warn-box { background:rgba(255,212,0,.04); border:1px solid rgba(255,212,0,.25); border-left:4px solid var(--accent3); padding:14px 18px; margin:22px 0; border-radius:2px; }
-    table { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
-    th,td { border:1px solid rgba(0,255,225,.2); padding:10px 13px; text-align:left; }
-    th { background:rgba(0,255,225,.1); color:var(--accent); text-transform:uppercase; letter-spacing:1px; }
-    tr:nth-child(even) { background:rgba(0,0,0,.2); }
-    .formula { text-align:center; font-size:18px; margin:24px 0; padding:18px; border:1px dashed var(--accent3); color:var(--fg); background:rgba(0,0,0,.2); border-radius:2px; }
-    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-    .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
-    .skill-card { background:rgba(0,0,0,.2); border:1px solid rgba(0,255,225,.15); padding:12px 14px; border-radius:2px; font-size:13px; }
+
+
+    .container-regras { max-width:960px; margin:0 auto; background:var(--bg2); border:1px solid rgba(0,255,225,.2); padding:40px; border-radius:4px; box-shadow:0 0 20px rgba(0,255,225,.05); }
+    .container-regras header { border-bottom:2px solid var(--accent3); padding-bottom:20px; margin-bottom:40px; text-align:center; }
+    .container-regras h1 { color:var(--accent3); margin:0; font-size:28px; letter-spacing:4px; text-transform:uppercase; text-shadow:0 0 10px rgba(255,212,0,.4); }
+    .container-regras .tag { color:var(--accent); font-size:13px; letter-spacing:2px; display:block; margin-top:10px; }
+    .container-regras h2 { color:var(--accent); font-size:18px; letter-spacing:2px; text-transform:uppercase; margin:44px 0 18px; border-left:4px solid var(--accent); padding-left:12px; }
+    .container-regras h3 { color:var(--accent2); font-size:14px; margin-top:24px; text-transform:uppercase; letter-spacing:1px; }
+    .container-regras h4 { color:var(--accent3); font-size:13px; margin:14px 0 6px; text-transform:uppercase; }
+    .container-regras p { margin-bottom:14px; color:#c0d0e0; font-size:14px; }
+    .container-regras ul { list-style-type:square; padding-left:20px; color:#c0d0e0; font-size:14px; }
+    .container-regras li { margin-bottom:8px; }
+    .container-regras .highlight { color:var(--accent3); font-weight:bold; }
+    .container-regras .danger { color:var(--danger); font-weight:bold; }
+    .container-regras .cyber-stat { color:var(--accent); font-weight:bold; }
+    .container-regras .cyber-skill { color:var(--accent2); font-style:italic; }
+    .container-regras .note-box { background:rgba(0,255,225,.04); border:1px solid rgba(0,255,225,.3); border-left:4px solid var(--accent); padding:14px 18px; margin:22px 0; border-radius:2px; }
+    .container-regras .note-box h4 { margin:0 0 10px 0; color:var(--accent); font-size:13px; text-transform:uppercase; }
+    .container-regras .role-box { background:rgba(255,46,136,.04); border:1px solid rgba(255,46,136,.25); border-left:4px solid var(--accent2); padding:14px 18px; margin:22px 0; border-radius:2px; }
+    .container-regras .role-box h4 { margin:0 0 10px 0; color:var(--accent2); font-size:13px; text-transform:uppercase; }
+    .container-regras .warn-box { background:rgba(255,212,0,.04); border:1px solid rgba(255,212,0,.25); border-left:4px solid var(--accent3); padding:14px 18px; margin:22px 0; border-radius:2px; }
+    .container-regras table { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+    .container-regras th,.container-regras td { border:1px solid rgba(0,255,225,.2); padding:10px 13px; text-align:left; }
+    .container-regras th { background:rgba(0,255,225,.1); color:var(--accent); text-transform:uppercase; letter-spacing:1px; }
+    .container-regras tr:nth-child(even) { background:rgba(0,0,0,.2); }
+    .container-regras .formula { text-align:center; font-size:18px; margin:24px 0; padding:18px; border:1px dashed var(--accent3); color:var(--fg); background:rgba(0,0,0,.2); border-radius:2px; }
+    .container-regras .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .container-regras .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+    .container-regras .skill-card { background:rgba(0,0,0,.2); border:1px solid rgba(0,255,225,.15); padding:12px 14px; border-radius:2px; font-size:13px; }
     .skill-card .skill-name { color:var(--accent2); font-weight:bold; display:block; margin-bottom:4px; }
     .skill-card .skill-stat { color:var(--accent); font-size:11px; display:block; margin-bottom:6px; }
-    .skill-card p { margin:0; font-size:13px; color:#a0b4c8; }
-    .footer { margin-top:50px; text-align:center; font-size:12px; color:var(--dim); border-top:1px solid rgba(0,255,225,.1); padding-top:20px; }
-    .badge { display:inline-block; background:rgba(0,255,225,.12); color:var(--accent); border:1px solid rgba(0,255,225,.3); font-size:11px; padding:2px 7px; border-radius:2px; margin-left:6px; vertical-align:middle; }
-    .badge-red { background:rgba(255,46,136,.12); color:var(--accent2); border-color:rgba(255,46,136,.3); }
-    .badge-yellow { background:rgba(255,212,0,.12); color:var(--accent3); border-color:rgba(255,212,0,.3); }
-    .small { font-size:12px; color:var(--dim); }
-    .rank-table { border:1px solid rgba(255,46,136,.2); }
-    .rank-table th { background:rgba(255,46,136,.1); color:var(--accent2); }
-  </style>
-</head>
-<body>
-<div class="container">
+    .container-regras .skill-card p { margin:0; font-size:13px; color:#a0b4c8; }
+    .container-regras .footer { margin-top:50px; text-align:center; font-size:12px; color:var(--dim); border-top:1px solid rgba(0,255,225,.1); padding-top:20px; }
+    .container-regras .badge { display:inline-block; background:rgba(0,255,225,.12); color:var(--accent); border:1px solid rgba(0,255,225,.3); font-size:11px; padding:2px 7px; border-radius:2px; margin-left:6px; vertical-align:middle; }
+    .container-regras .badge-red { background:rgba(255,46,136,.12); color:var(--accent2); border-color:rgba(255,46,136,.3); }
+    .container-regras .badge-yellow { background:rgba(255,212,0,.12); color:var(--accent3); border-color:rgba(255,212,0,.3); }
+    .container-regras .small { font-size:12px; color:var(--dim); }
+    .container-regras .rank-table { border:1px solid rgba(255,46,136,.2); }
+    .container-regras .rank-table th { background:rgba(255,46,136,.1); color:var(--accent2); }
+</style>
+<div class="container-regras">
+
   <header>
     <h1>DataTerm: Perícias & Habilidades</h1>
     <span class="tag">// RESOLUÇÃO DE TESTES COMPLETA — CYBERPUNK RED //</span>
@@ -489,6 +482,5 @@
   </div>
 
   <div class="footer">// GERADO PARA O SISTEMA NIGHT_CITY.RPG ASSISTANT // THE STREETS ALWAYS WIN //</div>
+
 </div>
-</body>
-</html>
